@@ -7,6 +7,7 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar'
 import UserPage from './components/UserPage'
+import Login from './components/Login'
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
       <Router>
         <div>
           <NavBar />
+          <Login />
           {/* This will eventually lead to the view page */}
           <Route exact path="/" render={() => <div>Home</div>} />
           {/* Eventually change this to username, if they're current_user? */}
