@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import UserInfo from './UserInfo'
-import UserBadgesContainer from
+import UserBadgesContainer from './UserBadgesContainer'
 
 class UserPage extends Component {
   render() {
