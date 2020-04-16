@@ -15,6 +15,8 @@ class App extends Component {
           <NavBar />
           {/* This will eventually lead to the view page */}
           <Route exact path="/" render={() => <div>Home</div>} />
+          {/* Eventually change this to username, if they're current_user? */}
+          <Route path="/profile" render={routerProps => <UserPage {...routerProps}/>}/>
           {/* <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} /> */}
         </div>
       </Router>
