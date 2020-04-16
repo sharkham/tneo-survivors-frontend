@@ -6,7 +6,6 @@ class UserPage extends Component {
   render() {
     return (
       <div>
-        <h1>Username</h1>
         <UserInfo />
         <UserBadgesContainer />
       </div>
