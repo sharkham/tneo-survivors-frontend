@@ -23,6 +23,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateLoginForm } from '../actions/loginForm';
+import { login } from '../actions/currentUser';
 
 class Login extends Component {
 
@@ -42,11 +43,13 @@ class Login extends Component {
     event.preventDefault()
     //the part where wordcount gets submitted somewhere!
     console.log(this.state)
+    this.props.login(this.state)
     this.setState({
       username: "",
       password: ""
     })
   }
+
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -60,7 +63,8 @@ class Login extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateLoginForm: formData => dispatch(updateLoginForm(formData))
+    updateLoginForm: formData => dispatch(updateLoginForm(formData)),
+    login: credentials => dispatch(login(credentials))
   }
 }
 
