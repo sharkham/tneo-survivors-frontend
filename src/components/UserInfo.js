@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import UpdateWordCountForm from './UpdateWordCountForm'
 
 class UserInfo extends Component {
   render() {
@@ -9,6 +10,7 @@ class UserInfo extends Component {
         Plan of Attack: Novel Plan
         Goal: 50000
         Word Count: 10000
+        <UpdateWordCountForm />
       </div>
     );
   }
