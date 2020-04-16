@@ -7,6 +7,7 @@ const BadgesForm = (props) => {
       <select className="badgeselect">
         <option value="">--Please choose a badge--</option>
         {props.badgetypes.forEach(badgetype => {
+          console.log(badgetype)
           //make new Option for each badgetype
           return <option value={badgetype.id}>{badgetype.name} - {badgetype.description}</option>
         })}
