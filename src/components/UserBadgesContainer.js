@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Badges from '/Badges'
-import BadgesForm from '/BadgesForm'
+import Badges from './Badges'
+import BadgesForm from './BadgesForm'
 
 class UserBadgesContainer extends Component {
   render() {
