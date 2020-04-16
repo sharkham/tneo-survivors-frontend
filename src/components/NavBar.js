@@ -3,9 +3,11 @@ import React, { Component } from 'react';
 class NavBar extends Component {
   render() {
     return (
-      <div>
-        Navbar
-      </div>
+      <ul>
+        <li>About</li>
+        <li>Profile</li>
+        <li>Logout</li>
+      </ul>
     );
   }
 }
