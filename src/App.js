@@ -18,14 +18,20 @@ class App extends Component {
     this.props.getCurrentUser()
   }
 
-
+  loginOrLogout = () => {
+    if (!!this.props.currentUser) {
+      return <Logout />
+    } else {
+      return <Login />
+    }
+  }
 
   render() {
     return (
       <Router>
         <div>
           <NavBar />
-          <Login />
+          {this.loginOrLogout()}
           {/* This will eventually lead to the view page */}
           <Route exact path="/" render={() => <div>Home</div>} />
           {/* Eventually change this to username, if they're current_user? */}
