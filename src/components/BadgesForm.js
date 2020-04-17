@@ -7,7 +7,6 @@ const BadgesForm = (props) => {
       <select className="badgeselect">
         <option value="">--Please choose a badge--</option>
         {props.badgetypes.map(badgetype => {
-          console.log(badgetype)
           //make new Option for each badgetype
           return <option key={badgetype.id} value={badgetype.id}>{badgetype.emoji} - {badgetype.name} - {badgetype.description}</option>
         })}
