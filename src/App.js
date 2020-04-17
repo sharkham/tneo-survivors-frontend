@@ -8,6 +8,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import UserPage from './components/UserPage';
 import Login from './components/Login';
+import Logout from './components/Logout';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser'
 
@@ -16,6 +17,8 @@ class App extends Component {
   componentDidMount() {
     this.props.getCurrentUser()
   }
+
+
 
   render() {
     return (
@@ -34,5 +37,11 @@ class App extends Component {
   }
 }
 
-export default connect(null, { getCurrentUser })(App);
+const mapStateToProps = state => {
+  return {
+    currentUser: state.currentUser
+  }
+}
+
+export default connect(mapStateToProps, { getCurrentUser })(App);
 
