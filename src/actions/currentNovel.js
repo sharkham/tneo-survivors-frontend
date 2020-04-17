@@ -6,12 +6,6 @@ export const setCurrentNovel = novel => {
   }
 }
 
-export const clearCurrentNovel = () => {
-  return {
-    type: "CLEAR_CURRENT_NOVEL"
-  }
-}
-
 //async methods
 export const getNovel = user => {
   console.log("test")
