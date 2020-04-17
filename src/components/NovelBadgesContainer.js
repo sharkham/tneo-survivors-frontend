@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Badges from './Badges'
 import BadgesForm from './BadgesForm'
 
-class UserBadgesContainer extends Component {
+class NovelBadgesContainer extends Component {
   //this component is going to access store to get and set info
 
   state = {
@@ -38,4 +38,4 @@ class UserBadgesContainer extends Component {
   }
 }
 
-export default UserBadgesContainer;
+export default NovelBadgesContainer;

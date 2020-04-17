@@ -3,8 +3,8 @@ import UpdateWordCountForm from './UpdateWordCountForm'
 import BasicInfoDisplay from './BasicInfoDisplay'
 import { connect } from 'react-redux';
 
-class UserInfo extends Component {
-  //this component is going to access store to get and set user info
+class NovelInfo extends Component {
+  //this component is going to access store to get and set novel info
 
   renderUsername = () => {
     if (!!this.props.user) {
@@ -29,4 +29,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(UserInfo);
+export default connect(mapStateToProps)(NovelInfo);

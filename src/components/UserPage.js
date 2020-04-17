@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import UserInfo from './UserInfo'
-import UserBadgesContainer from './UserBadgesContainer'
+import NovelInfo from './NovelInfo'
+import NovelBadgesContainer from './NovelBadgesContainer'
 
 class UserPage extends Component {
   render() {
     return (
       <div>
-        <UserInfo />
-        <UserBadgesContainer />
+        {/* Add conditional rendering--if User has no novel User is prompted to create novel */}
+        <NovelInfo />
+        <NovelBadgesContainer />
       </div>
     );
   }
