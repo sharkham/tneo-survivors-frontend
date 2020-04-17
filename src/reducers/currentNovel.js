@@ -4,6 +4,8 @@ export default function currentNovel(state = null, action) {
       return action.novel
     case 'CLEAR_CURRENT_USER':
       return null
+    case 'UPDATE_CURRENT_NOVEL_WORDCOUNT':
+      return action.novel
     default:
       return state
   }
