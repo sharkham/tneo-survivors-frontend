@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 import NovelInfo from './NovelInfo';
 import NovelBadgesContainer from './NovelBadgesContainer';
-import { getNovel } from '../actions/currentNovel';
 import { connect } from 'react-redux';
 
 class UserPage extends Component {
-  componentDidUpdate() {
-    if (!!this.props.user) {
-      console.log("attempting")
-      this.novel = this.props.getNovel(this.props.user)
-    }
-  }
+
 
   // createNovelPrompt = () => {
   //   if (!this.novel) {
@@ -45,10 +39,6 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getNovel: user => dispatch(getNovel(user))
-  }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserPage);
+
+export default connect(mapStateToProps)(UserPage);
