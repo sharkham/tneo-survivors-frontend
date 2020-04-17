@@ -22,7 +22,6 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateLoginForm } from '../actions/loginForm';
 import { login } from '../actions/currentUser';
 
 class Login extends Component {
@@ -63,7 +62,6 @@ class Login extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    updateLoginForm: formData => dispatch(updateLoginForm(formData)),
     login: credentials => dispatch(login(credentials))
   }
 }
