@@ -13,12 +13,21 @@ class UpdateWordCountForm extends Component {
     })
   }
 
+  updateNovel = (updatedWordCount) => {
+    return {
+      ...this.props.novel,
+      wordcount: updatedWordCount
+    }
+  }
+
   handleSubmit = (event) => {
     event.preventDefault()
     const updatedWordCount = this.state.wordCount + parseInt(this.state.addedWords)
-    this.props.patchWordCount(this.state.wordcount)
-    // console.log(updatedWordCount)
-    //the part where wordcount gets submitted somewhere!
+    const updatedNovel = this.updateNovel(updatedWordCount)
+    console.log(updatedNovel)
+    //this also currently adds badges to currentNovel,
+    //which currentNovel didn't have here because we were getting it from the user object
+    this.props.patchWordCount(updatedNovel)
     this.setState({
       ...this.state,
       addedWords: "",
