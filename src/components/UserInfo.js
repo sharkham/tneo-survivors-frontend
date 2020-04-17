@@ -5,9 +5,13 @@ import { connect } from 'react-redux';
 
 class UserInfo extends Component {
   //this component is going to access store to get and set user info
-  // componentDidMount = () => {
-  //   console.log(this.props.user)
-  // }
+  componentDidMount = () => {
+    console.log(this.props.user)
+  }
+
+  componentDidUpdate = () => {
+    console.log(this.props.user)
+  }
 
   // renderUsername = () => {
   //   if (!!this.props.user.username) {
