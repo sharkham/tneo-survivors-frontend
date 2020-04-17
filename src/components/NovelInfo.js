@@ -21,7 +21,7 @@ class NovelInfo extends Component {
       return (
         <div>
           <BasicInfoDisplay novel={this.props.novel}/>
-          <UpdateWordCountForm wordcount={this.props.novel.wordcount} patchWordCount={this.props.patchWordCount}/>
+          <UpdateWordCountForm novel={this.props.novel} wordcount={this.props.novel.wordcount} patchWordCount={this.props.patchWordCount}/>
         </div>
       );
     } else {
