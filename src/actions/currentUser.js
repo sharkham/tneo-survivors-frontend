@@ -33,9 +33,9 @@ export const login = credentials => {
   }
 }
 
-export const getCurrentUser = credentials => {
+export const getCurrentUser = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/login", {
+    return fetch("http://localhost:3000/api/v1/get_current_user", {
       method: "GET",
       headers: {
         "Content-Type": "application/json"
