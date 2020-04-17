@@ -20,11 +20,18 @@ class UserPage extends Component {
   //   }
   // }
 
+  renderUsername = () => {
+    if (!!this.props.user) {
+      return this.props.user.name
+    }
+  }
+
   render() {
     return (
       <div>
         {/* Add conditional rendering--if User has no novel User is prompted to create novel */}
         {/* {this.createNovelPrompt()} */}
+        <h1>{this.renderUsername()}</h1>
         <NovelInfo />
         <NovelBadgesContainer />
       </div>
