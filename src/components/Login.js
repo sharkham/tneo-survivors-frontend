@@ -1,25 +1,3 @@
-// import React from 'react';
-// import connect from 'react-redux';
-
-// const Login = (props) => {
-//   return (
-//     <form>
-//       <input name="username" placeholder="username" type="text"/>
-//       <input name="password" placeholder="password" type="password"/>
-//       <input type="submit" value="Log In"/>
-//     </form>
-//   );
-// }
-
-// const mapStateToProps = state => {
-//   return {
-//     username: state.loginForm.username,
-//     password: state.loginForm.password
-//   }
-// }
-
-// export default connect(mapStateToProps)(Login);
-
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/currentUser';
