@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import UpdateWordCountForm from './UpdateWordCountForm'
 import BasicInfoDisplay from './BasicInfoDisplay'
 import { connect } from 'react-redux';
-import { getNovel } from '../actions/currentNovel';
+import { getNovel, patchWordCount } from '../actions/currentNovel';
 
 
 class NovelInfo extends Component {
@@ -21,7 +21,7 @@ class NovelInfo extends Component {
       return (
         <div>
           <BasicInfoDisplay novel={this.props.novel}/>
-          <UpdateWordCountForm />
+          <UpdateWordCountForm wordcount={this.props.novel.wordcount} patchWordCount={this.props.patchWordCount}/>
         </div>
       );
     } else {
@@ -50,7 +50,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getNovel: user => dispatch(getNovel(user))
+    getNovel: user => dispatch(getNovel(user)),
+    patchWordCount: novel => dispatch(patchWordCount(novel))
   }
 }
 
