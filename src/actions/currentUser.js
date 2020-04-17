@@ -36,7 +36,6 @@ export const login = credentials => {
 export const getCurrentUser = credentials => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/login", {
-      //still creating something--creating a session, that's why it's a POST
       method: "GET",
       headers: {
         "Content-Type": "application/json"
