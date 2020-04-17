@@ -14,6 +14,7 @@ export const login = credentials => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/login", {
       //still creating something--creating a session, that's why it's a POST
+      credentials: "include",
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -37,6 +38,7 @@ export const getCurrentUser = () => {
   console.log("DISPATCHING GET CURRENT USER")
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/get_current_user", {
+      credentials: "include",
       method: "GET",
       headers: {
         "Content-Type": "application/json"
