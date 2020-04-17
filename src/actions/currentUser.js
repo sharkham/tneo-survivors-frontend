@@ -34,6 +34,15 @@ export const login = credentials => {
   }
 }
 
+export const logout = () => {
+  return dispatch => {
+    return fetch("http://localhost:3000/api/v1/logout", {
+      credentials: "include",
+      method: "DELETE"
+    })
+  }
+}
+
 export const getCurrentUser = () => {
   return dispatch => {
     return fetch("http://localhost:3000/api/v1/get_current_user", {
