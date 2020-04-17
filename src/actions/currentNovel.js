@@ -1,3 +1,5 @@
+const baseURL = "http://localhost:3000/api/v1/"
+
 //sync methods
 export const setCurrentNovel = novel => {
   return {
@@ -6,11 +8,18 @@ export const setCurrentNovel = novel => {
   }
 }
 
+export const updateWordCount = novel => {
+  return {
+    type: "UPDATE_CURRENT_NOVEL_WORDCOUNT",
+    novel
+  }
+}
+
 //async methods
 export const getNovel = user => {
-  console.log("test")
+  console.log("getNovel")
   return dispatch => {
-    return fetch(`http://localhost:3000/api/v1/users/${user.id}`, {
+    return fetch(`${baseURL}/users/${user.id}`, {
       //grab the user, get the novel where the novel year matches current year.
       credentials: "include",
       method: "GET",
@@ -33,6 +42,28 @@ export const getNovel = user => {
       // }
     })
     .catch(console.log)
+  }
+}
+
+export const patchWordCount = novel => {
+  console.log("patching word count")
+  return dispatch => {
+    return fetch(`http://localhost:3000/api/v1/novels/${novel.id}`, {
+      credentials: "include",
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(novel)
+    })
+    .then(res => res.json())
+    .then(novel => {
+      if (novel.error) {
+        alert(novel.error)
+      } else {
+        dispatch(updateWordCount(novel))
+      }
+    })
   }
 }
 
