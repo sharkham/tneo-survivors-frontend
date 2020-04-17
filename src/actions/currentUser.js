@@ -8,6 +8,13 @@ export const setCurrentUser = user => {
   }
 }
 
+//this deals with clearing user out of Redux store
+export const clearCurrentUser = () => {
+  return {
+    type: "CLEAR_CURRENT_USER"
+  }
+}
+
 
 //asynchronous action creators
 export const login = credentials => {
@@ -34,8 +41,11 @@ export const login = credentials => {
   }
 }
 
+//this clears session
 export const logout = () => {
   return dispatch => {
+    //logging them out immediately on front end
+    dispatch(clearCurrentUser())
     return fetch("http://localhost:3000/api/v1/logout", {
       credentials: "include",
       method: "DELETE"
@@ -57,6 +67,7 @@ export const getCurrentUser = () => {
       if (user.error) {
         alert(user.error)
       } else {
+        //dealing with the front end thing
         dispatch(setCurrentUser(user))
       }
     })
