@@ -7,9 +7,9 @@ import { getCurrentUser } from '../actions/currentUser'
 
 class NavBar extends Component {
 
-  componentDidMount() {
-    this.props.getCurrentUser()
-  }
+  // componentDidMount() {
+  //   this.props.getCurrentUser()
+  // }
 
   loginOrLogout = () => {
     if (!!this.props.currentUser) {
@@ -37,4 +37,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getCurrentUser })(NavBar);
+export default connect(mapStateToProps)(NavBar);

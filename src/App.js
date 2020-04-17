@@ -12,9 +12,11 @@ import { getCurrentUser } from './actions/currentUser'
 
 class App extends Component {
 
-  // componentDidMount() {
-  //   this.props.getCurrentUser()
-  // }
+  componentDidMount() {
+    if (!this.props.currentUser) {
+      this.props.getCurrentUser()
+    }
+  }
 
   // loginOrLogout = () => {
   //   if (!!this.props.currentUser) {
