@@ -8,14 +8,23 @@ class UserPage extends Component {
   componentDidUpdate() {
     if (!!this.props.user) {
       console.log("attempting")
-      this.props.getNovel(this.props.user)
+      this.novel = this.props.getNovel(this.props.user)
     }
   }
+
+  // createNovelPrompt = () => {
+  //   if (!this.novel) {
+  //     return <p>Create a novel for this year?</p>
+  //   } else {
+  //     return <p>Novel exists, cool</p>
+  //   }
+  // }
 
   render() {
     return (
       <div>
         {/* Add conditional rendering--if User has no novel User is prompted to create novel */}
+        {/* {this.createNovelPrompt()} */}
         <NovelInfo />
         <NovelBadgesContainer />
       </div>
