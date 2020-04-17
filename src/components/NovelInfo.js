@@ -8,17 +8,32 @@ import { getNovel } from '../actions/currentNovel';
 class NovelInfo extends Component {
   //this component is going to access store to get and set novel info
   componentDidUpdate() {
-    if (!!this.props.user) {
+    if (!!this.props.user && !this.props.novel) {
       console.log("attempting")
-      this.novel = this.props.getNovel(this.props.user)
+      this.props.getNovel(this.props.user)
     }
+  }
+
+  novelInfoOrPrompt = () => {
+    if (!!this.props.novel) {
+      return (
+        <div>
+          <BasicInfoDisplay />
+          <UpdateWordCountForm />
+        </div>
+      );
+    } else {
+      return <div>Create a novel?</div>
+    }
+
   }
 
   render() {
     return (
       <div>
-        <BasicInfoDisplay />
-        <UpdateWordCountForm />
+        {this.novelInfoOrPrompt()}
+        {/* <BasicInfoDisplay />
+        <UpdateWordCountForm /> */}
       </div>
     );
   }
@@ -26,7 +41,8 @@ class NovelInfo extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.currentUser
+    user: state.currentUser,
+    novel: state.currentNovel
   }
 }
 
