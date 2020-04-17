@@ -5,6 +5,13 @@ import { getNovel } from '../actions/currentNovel';
 import { connect } from 'react-redux';
 
 class UserPage extends Component {
+  componentDidUpdate() {
+    if (!!this.props.user) {
+      console.log("attempting")
+      this.props.getNovel(this.props.user)
+    }
+  }
+
   render() {
     return (
       <div>
@@ -16,10 +23,16 @@ class UserPage extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
   return {
-    getNovel: novel => dispatch(getNovel(novel))
+    user: state.currentUser
   }
 }
 
-export default connect(null, mapDispatchToProps)(UserPage);
+const mapDispatchToProps = dispatch => {
+  return {
+    getNovel: user => dispatch(getNovel(user))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserPage);
