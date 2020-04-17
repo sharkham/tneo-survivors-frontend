@@ -2,22 +2,27 @@ import React, { Component } from 'react';
 
 class UpdateWordCountForm extends Component {
   state = {
-    wordcount: ""
+    addedWords: "",
+    wordCount: this.props.wordcount
   }
 
   handleChange = (event) => {
     const { name, value } = event.target
     this.setState({
-      [name]: value
+      [name]: value,
     })
   }
 
   handleSubmit = (event) => {
     event.preventDefault()
+    const updatedWordCount = this.state.wordCount + parseInt(this.state.addedWords)
+    this.props.patchWordCount(this.state.wordcount)
+    // console.log(updatedWordCount)
     //the part where wordcount gets submitted somewhere!
-    console.log(this.state.wordcount)
     this.setState({
-      wordcount: ""
+      ...this.state,
+      addedWords: "",
+      wordCount: updatedWordCount
     })
   }
 
@@ -25,7 +30,7 @@ class UpdateWordCountForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>Update Word Count (please enter the number of words you wish to add):</label>
-        <input id="wordcount" type="number" min="1" name="wordcount" onChange={this.handleChange} value={this.state.wordcount}/>
+        <input id="addedWords" type="number" min="1" name="addedWords" onChange={this.handleChange} value={this.state.addedWords}/>
         <input type="submit"/>
       </form>
     );
