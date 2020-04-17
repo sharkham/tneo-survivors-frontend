@@ -7,31 +7,28 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
 import UserPage from './components/UserPage';
-import Login from './components/Login';
-import Logout from './components/Logout';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser'
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.getCurrentUser()
-  }
+  // componentDidMount() {
+  //   this.props.getCurrentUser()
+  // }
 
-  loginOrLogout = () => {
-    if (!!this.props.currentUser) {
-      return <Logout />
-    } else {
-      return <Login />
-    }
-  }
+  // loginOrLogout = () => {
+  //   if (!!this.props.currentUser) {
+  //     return <Logout />
+  //   } else {
+  //     return <Login />
+  //   }
+  // }
 
   render() {
     return (
       <Router>
         <div>
           <NavBar />
-          {this.loginOrLogout()}
           {/* This will eventually lead to the view page */}
           <Route exact path="/" render={() => <div>Home</div>} />
           {/* Eventually change this to username, if they're current_user? */}
