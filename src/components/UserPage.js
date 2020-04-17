@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import NovelInfo from './NovelInfo'
-import NovelBadgesContainer from './NovelBadgesContainer'
+import NovelInfo from './NovelInfo';
+import NovelBadgesContainer from './NovelBadgesContainer';
+import { getNovel } from '../actions/currentNovel';
+import { connect } from 'react-redux';
 
 class UserPage extends Component {
   render() {
@@ -14,4 +16,10 @@ class UserPage extends Component {
   }
 }
 
-export default UserPage;
+const mapDispatchToProps = dispatch => {
+  return {
+    getNovel: novel => dispatch(getNovel(novel))
+  }
+}
+
+export default connect(null, mapDispatchToProps)(UserPage);
