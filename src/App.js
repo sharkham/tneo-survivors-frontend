@@ -8,6 +8,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import UserPage from './components/UserPage';
 import Login from './components/Login';
+import Signup from './components/Signup';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser'
 
@@ -37,6 +38,7 @@ class App extends Component {
           Would take conditional rendering out of App class */}
           <Route exact path="/" render={() => <div>Home</div>} />
           <Route exact path="/login" component={Login}/>
+          <Route exact path="/signup" component={Signup}/>
           {/* Eventually change this to username, if they're current_user? */}
           <Route path="/profile" render={routerProps => <UserPage {...routerProps}/>}/>
           {/* <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} /> */}
