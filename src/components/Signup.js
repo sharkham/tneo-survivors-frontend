@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { signup } from '../actions/currentUser';
+import { signup } from '../actions/currentUser';
 
 class Signup extends Component {
 
@@ -21,7 +21,7 @@ class Signup extends Component {
     event.preventDefault()
     //the part where wordcount gets submitted somewhere!
     console.log(this.state)
-    // this.props.login(this.state)
+    this.props.signup(this.state)
     this.setState({
       username: "",
       name: "",
@@ -41,11 +41,11 @@ class Signup extends Component {
   }
 }
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     signup: credentials => dispatch(signup(credentials))
-//   }
-// }
+const mapDispatchToProps = dispatch => {
+  return {
+    signup: credentials => dispatch(signup(credentials))
+  }
+}
 
-export default connect(null)(Signup);
+export default connect(null, mapDispatchToProps)(Signup);
 
