@@ -33,7 +33,7 @@ export const getNovel = user => {
       if (!!findCurrentNovel(novels))
         dispatch(setCurrentNovel(findCurrentNovel(novels)))
       else {
-        alert(novels.error)
+        console.log(novels.error)
       }
       // if (novel.error) {
       //   alert(novel.error)
