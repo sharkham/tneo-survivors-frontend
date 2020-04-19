@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="App">
           <NavBar />
           {/* This will eventually lead to the view page */}
           {/* Should there be a main page here instead that has the routes to things?
