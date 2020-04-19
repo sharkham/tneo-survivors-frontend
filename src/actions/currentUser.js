@@ -43,6 +43,10 @@ export const login = credentials => {
 
 export const signup = credentials => {
   return dispatch => {
+    const userInfo = {
+      user: credentials
+    }
+    console.log(userInfo)
     return fetch("http://localhost:3000/api/v1/signup", {
       //still creating something--creating a session, that's why it's a POST
       credentials: "include",
@@ -50,7 +54,7 @@ export const signup = credentials => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(credentials)
+      body: JSON.stringify(userInfo)
       //body: JSON.stringify({username: "marysue1", password: "password"})
     })
     .then(res => res.json())
