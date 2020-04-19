@@ -20,7 +20,7 @@ class NavBar extends Component {
           <li><a href="/">Home</a></li>
           <li>About</li>
           <li>Profile</li>
-          { this.props.currentUser ? <li><Logout /></li> : <li><Login /></li>}
+          { this.props.currentUser ? <li><Logout /></li> : <li><a href="/login">Log In</a> or <a href="/signup">Sign Up</a></li>}
         </ul>
       </div>
     );
