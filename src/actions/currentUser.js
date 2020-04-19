@@ -41,6 +41,30 @@ export const login = credentials => {
   }
 }
 
+export const signup = credentials => {
+  return dispatch => {
+    return fetch("http://localhost:3000/api/v1/signup", {
+      //still creating something--creating a session, that's why it's a POST
+      credentials: "include",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(credentials)
+      //body: JSON.stringify({username: "marysue1", password: "password"})
+    })
+    .then(res => res.json())
+    .then(user => {
+      if (user.error) {
+        alert(user.error)
+      } else {
+        dispatch(setCurrentUser(user))
+      }
+    })
+    .catch(console.log)
+  }
+}
+
 //this clears session
 export const logout = () => {
   return dispatch => {
