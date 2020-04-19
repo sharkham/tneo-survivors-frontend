@@ -32,6 +32,8 @@ class App extends Component {
         <div>
           <NavBar />
           {/* This will eventually lead to the view page */}
+          {/* Should there be a main page here instead that has the routes to things?
+          Would take conditional rendering out of App class */}
           <Route exact path="/" render={() => <div>Home</div>} />
           {/* Eventually change this to username, if they're current_user? */}
           <Route path="/profile" render={routerProps => <UserPage {...routerProps}/>}/>
