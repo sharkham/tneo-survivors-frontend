@@ -19,7 +19,7 @@ export const updateWordCount = novel => {
 export const getNovel = user => {
   console.log("getNovel")
   return dispatch => {
-    return fetch(`${baseURL}/users/${user.id}`, {
+    return fetch(`${baseURL}/users/${user.id}/novels`, {
       //grab the user, get the novel where the novel year matches current year.
       credentials: "include",
       method: "GET",
@@ -29,11 +29,11 @@ export const getNovel = user => {
       //body: JSON.stringify({username: "marysue1", password: "password"})
     })
     .then(res => res.json())
-    .then(user => {
-      if (!!findCurrentNovel(user))
-        dispatch(setCurrentNovel(findCurrentNovel(user)))
+    .then(novels => {
+      if (!!findCurrentNovel(novels))
+        dispatch(setCurrentNovel(findCurrentNovel(novels)))
       else {
-        alert(user.error)
+        alert(novels.error)
       }
       // if (novel.error) {
       //   alert(novel.error)
@@ -68,9 +68,9 @@ export const patchWordCount = novel => {
 }
 
 //helpers
-const findCurrentNovel = user => {
+const findCurrentNovel = novels => {
   const currentYear = new Date().getFullYear()
-  if (!!user.novels.find(novel => novel.year === currentYear)) {
-    return user.novels.find(novel => novel.year === currentYear)
+  if (!!novels.find(novel => novel.year === currentYear)) {
+    return novels.find(novel => novel.year === currentYear)
   }
 }
