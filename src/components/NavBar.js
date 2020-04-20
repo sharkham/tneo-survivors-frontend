@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Login from './Login';
 import Logout from './Logout';
 import { connect } from 'react-redux';
 import { getCurrentUser } from '../actions/currentUser'
@@ -20,7 +19,7 @@ class NavBar extends Component {
           <li><a href="/">Home</a></li>
           <li>About</li>
           <li>Profile</li>
-          { this.props.currentUser ? <li><Logout /></li> : <li><a href="/login">Log In</a> or <a href="/signup">Sign Up</a></li>}
+          { this.props.currentUser ? <li><Logout /></li> : ""}
         </ul>
       </div>
     );
