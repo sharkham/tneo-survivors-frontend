@@ -44,17 +44,28 @@ class NovelForm extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input id="title" type="text" name="title" onChange={this.handleChange} value={this.state.title}/>
-        <input id="summary" type="textarea" name="summary" onChange={this.handleChange} value={this.state.summary}/>
-        <select id="plan" name="plan" onChange={this.handleChange} value={this.state.plan}>
-          <option value="">--Please choose a plan--</option>
-          {this.planTypes().map(planType => {
-            //make new Option for each planType
-            return <option key={planType} value={planType}>{planType}</option>
-          })}
-        </select>
-        {/* <input id="plan" type="text" min="1" name="plan" onChange={this.handleChange} value={this.state.plan}/> */}
-        <input id="goal" type="number" min="1" name="goal" onChange={this.handleChange} value={this.state.goal}/>
+        <label>
+          Title:
+          <input id="title" type="text" name="title" onChange={this.handleChange} value={this.state.title}/>
+        </label>
+        <label>
+          Summary:
+          <input id="summary" type="textarea" name="summary" onChange={this.handleChange} value={this.state.summary}/>
+        </label>
+        <label>
+          Plan:
+          <select id="plan" name="plan" onChange={this.handleChange} value={this.state.plan}>
+            <option value="">--Please choose a plan--</option>
+            {this.planTypes().map(planType => {
+              //make new Option for each planType
+              return <option key={planType} value={planType}>{planType}</option>
+            })}
+          </select>
+        </label>
+        <label>
+          Word count goal:
+          <input id="goal" type="number" min="1" name="goal" onChange={this.handleChange} value={this.state.goal}/>
+        </label>
         <input type="submit"/>
       </form>
     );
