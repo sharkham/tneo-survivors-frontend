@@ -9,6 +9,8 @@ import NavBar from './components/NavBar';
 import UserPage from './components/UserPage';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import AllNovelsIndex from './components/AllNovelsIndex';
+import Home from './components/Home';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser'
 
@@ -29,7 +31,7 @@ class App extends Component {
           {/* This will eventually lead to the view page */}
           {/* Should there be a main page here instead that has the routes to things?
           Would take conditional rendering out of App class */}
-          <Route exact path="/" render={() => loggedIn ? <Index/> : <Home/>} />
+          <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <Home/>} />
           <Route exact path="/login" component={Login}/>
           <Route exact path="/signup" component={Signup}/>
           {/* Eventually change this to username, if they're current_user? */}
