@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
@@ -32,10 +33,11 @@ class App extends Component {
           {/* Should there be a main page here instead that has the routes to things?
           Would take conditional rendering out of App class */}
           <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <Home/>} />
-          <Route exact path="/login" component={Login}/>
+          <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
           <Route exact path="/signup" component={Signup}/>
+          {/* {loggedIn ? <Redirect to="/dashboard" /> : <PublicHomePage />} */}
           {/* Eventually change this to username, if they're current_user? */}
-          <Route path="/profile" render={routerProps => <UserPage {...routerProps}/>}/>
+          {/* <Route path="/profile" render={routerProps => loggedIn ? <UserPage {...routerProps}/> : }/> */}
           {/* <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} /> */}
         </div>
       </Router>
