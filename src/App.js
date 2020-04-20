@@ -14,12 +14,14 @@ import AllNovelsIndex from './components/AllNovelsIndex';
 import Home from './components/Home';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser'
+// import { getNovel } from './actions/currentNovel'
 
 class App extends Component {
 
   componentDidMount() {
     if (!this.props.currentUser) {
       this.props.getCurrentUser()
+      // this.props.getNovel()
     }
   }
 

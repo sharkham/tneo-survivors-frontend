@@ -1,3 +1,5 @@
+import { getNovel } from './currentNovel'
+
 //synchronous action creators
 
 //for this action we have a user object in hand
@@ -35,6 +37,7 @@ export const login = credentials => {
         alert(user.error)
       } else {
         dispatch(setCurrentUser(user))
+        dispatch(getNovel(user))
       }
     })
     .catch(console.log)
@@ -97,6 +100,7 @@ export const getCurrentUser = () => {
       } else {
         //dealing with the front end thing
         dispatch(setCurrentUser(user))
+        dispatch(getNovel(user))
       }
     })
     .catch(console.log)

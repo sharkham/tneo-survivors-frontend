@@ -8,12 +8,12 @@ import { getNovel, patchWordCount } from '../actions/currentNovel';
 
 class NovelInfo extends Component {
   //this component is going to access store to get and set novel info
-  componentDidUpdate() {
-    if (!!this.props.user && !this.props.novel) {
-      console.log("attempting")
-      this.props.getNovel(this.props.user)
-    }
-  }
+  // componentDidUpdate() {
+  //   if (!!this.props.user && !this.props.novel) {
+  //     console.log("attempting")
+  //     this.props.getNovel(this.props.user)
+  //   }
+  // }
 
   //this component should only display if user has a novel, the "create a novel" flicker is frustrating
   //and create a novel should be a different component
