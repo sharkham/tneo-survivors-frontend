@@ -20,15 +20,8 @@ class App extends Component {
     }
   }
 
-  // loginOrLogout = () => {
-  //   if (!!this.props.currentUser) {
-  //     return <Logout />
-  //   } else {
-  //     return <Login />
-  //   }
-  // }
-
   render() {
+    const loggedIn = this.props.loggedIn
     return (
       <Router>
         <div>
@@ -36,7 +29,7 @@ class App extends Component {
           {/* This will eventually lead to the view page */}
           {/* Should there be a main page here instead that has the routes to things?
           Would take conditional rendering out of App class */}
-          <Route exact path="/" render={() => <div>Home</div>} />
+          <Route exact path="/" render={() => loggedIn ? <Index/> : <Home/>} />
           <Route exact path="/login" component={Login}/>
           <Route exact path="/signup" component={Signup}/>
           {/* Eventually change this to username, if they're current_user? */}
@@ -50,7 +43,8 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.currentUser
+    currentUser: state.currentUser,
+    loggedIn: !!state.currentUser
   }
 }
 
