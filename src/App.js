@@ -34,7 +34,7 @@ class App extends Component {
           Would take conditional rendering out of App class */}
           <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <Home/>} />
           <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
-          <Route exact path="/signup" component={Signup}/>
+          <Route exact path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
           {/* {loggedIn ? <Redirect to="/dashboard" /> : <PublicHomePage />} */}
           {/* Eventually change this to username, if they're current_user? */}
           {/* <Route path="/profile" render={routerProps => loggedIn ? <UserPage {...routerProps}/> : }/> */}
