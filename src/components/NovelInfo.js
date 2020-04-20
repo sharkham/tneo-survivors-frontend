@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import UpdateWordCountForm from './UpdateWordCountForm'
-import BasicInfoDisplay from './BasicInfoDisplay'
+import UpdateWordCountForm from './UpdateWordCountForm';
+import BasicInfoDisplay from './BasicInfoDisplay';
+import NovelForm from './NovelForm'
 import { connect } from 'react-redux';
 import { getNovel, patchWordCount } from '../actions/currentNovel';
 
@@ -25,7 +26,9 @@ class NovelInfo extends Component {
         </div>
       );
     } else {
-      return <div>Create a novel?</div>
+      return (
+        <NovelForm/>
+      )
     }
 
   }
