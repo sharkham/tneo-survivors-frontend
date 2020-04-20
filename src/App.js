@@ -35,9 +35,9 @@ class App extends Component {
           <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <Home/>} />
           <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
           <Route exact path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
-          {/* {loggedIn ? <Redirect to="/dashboard" /> : <PublicHomePage />} */}
           {/* Eventually change this to username, if they're current_user? */}
-          {/* <Route path="/profile" render={routerProps => loggedIn ? <UserPage {...routerProps}/> : }/> */}
+          {/* <Route path="/profile" render={routerProps => loggedIn ? <UserPage {...routerProps}/> : <Redirect to="/"/> }/> */}
+          <Route path="/profile">{loggedIn ? <UserPage/> : <Redirect to="/"/>}</Route>
           {/* <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} /> */}
         </div>
       </Router>
