@@ -31,45 +31,11 @@ class NovelPage extends Component {
         {/* {this.createNovelPrompt()} */}
         {/* <UserInfo name={this.props.user.name} username={this.props.user.username}/> */}
         <Switch>
-          {/* <Route
-            path="/novel/edit"
-            render={data => {
-              return (
-                <EditNovel
-                  novelId={data.match.params.novelId}
-                />
-              );
-            }}
-          /> */}
-          {/* <Route
-            path="/novel/create"
-            render={data => {
-              return (
-                <EditNovel
-                  novelId={data.match.params.novelId}
-                />
-              );
-            }}
-          /> */}
           <Route path="/novel/edit">{this.props.hasNovel ? <EditNovel novel={this.props.novel}/> : <Redirect to="/novel/create"/>}</Route>
           <Route path="/novel/create">{this.props.hasNovel ? <Redirect to="/novel"/> : <CreateNovel/>}</Route>
 
           <Route path="/novel">{this.props.hasNovel ? <div><NovelInfo/><NovelBadgesContainer/></div> : <Redirect to="/novel/create"/>}</Route>
-
-          {/* <Route
-            path="/novel"
-            render={data => {
-              return (
-                <div>Novel Info</div>
-                // <NovelInfo novelId={data.match.params.novelId} />
-              );
-            }}
-          /> */}
         </Switch>
-        {/* <CreateNovel /> */}
-        {/* <EditNovel novel={this.props.novel}/> */}
-        {/* <NovelInfo /> */}
-        {/* <NovelBadgesContainer /> */}
       </div>
     );
   }
