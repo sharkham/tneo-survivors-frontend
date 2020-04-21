@@ -31,7 +31,7 @@ class NovelPage extends Component {
         {/* {this.createNovelPrompt()} */}
         {/* <UserInfo name={this.props.user.name} username={this.props.user.username}/> */}
         <Switch>
-          <Route
+          {/* <Route
             path="/novel/edit"
             render={data => {
               return (
@@ -40,7 +40,7 @@ class NovelPage extends Component {
                 />
               );
             }}
-          />
+          /> */}
           {/* <Route
             path="/novel/create"
             render={data => {
@@ -51,6 +51,7 @@ class NovelPage extends Component {
               );
             }}
           /> */}
+          <Route path="/novel/edit">{this.props.hasNovel ? <EditNovel novel={this.props.novel}/> : <Redirect to="/novel/create"/>}</Route>
           <Route path="/novel/create">{this.props.hasNovel ? <Redirect to="/novel"/> : <CreateNovel/>}</Route>
 
           <Route path="/novel">{this.props.hasNovel ? <div><NovelInfo/><NovelBadgesContainer/></div> : <Redirect to="/novel/create"/>}</Route>
