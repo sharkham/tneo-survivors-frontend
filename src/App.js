@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
   Route,
   Redirect
 } from 'react-router-dom';
@@ -28,7 +27,6 @@ class App extends Component {
   render() {
     const loggedIn = this.props.loggedIn
     return (
-      <Router>
         <div>
           <NavBar />
           {/* This will eventually lead to the view page */}
@@ -42,7 +40,6 @@ class App extends Component {
           <Route path="/profile">{loggedIn ? <UserPage/> : <Redirect to="/"/>}</Route>
           {/* <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} /> */}
         </div>
-      </Router>
     );
   }
 }
