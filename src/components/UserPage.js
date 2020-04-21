@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NovelInfo from './NovelInfo';
-import NovelForm from './NovelForm';
+import CreateNovel from './CreateNovel';
+import EditNovel from './EditNovel';
 import NovelBadgesContainer from './NovelBadgesContainer';
 import UserInfo from './UserInfo'
 import { connect } from 'react-redux';
@@ -28,8 +29,6 @@ class UserPage extends Component {
       <div>
         {/* Add conditional rendering--if User has no novel User is prompted to create novel */}
         {/* {this.createNovelPrompt()} */}
-        {/* Maybe turn this into a stateless functional component where username is passed down as props */}
-        {/* <h1>{this.renderUsername()}</h1> */}
         <UserInfo name={this.props.user.name} username={this.props.user.username}/>
         {/* <Switch>
           <Route
@@ -53,6 +52,8 @@ class UserPage extends Component {
             }}
           />
         </Switch> */}
+        <CreateNovel />
+        <EditNovel />
         <NovelInfo />
         <NovelBadgesContainer />
       </div>
