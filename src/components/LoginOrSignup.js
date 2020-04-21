@@ -3,7 +3,7 @@ import Login from './Login';
 import Signup from './Signup';
 import { Link } from 'react-router-dom';
 
-const Home = () => {
+const LoginOrSignup = () => {
   return (
     <div>
       <h4>Welcome, please <Link to="/signup">sign up</Link> or <Link to="/login">log in</Link>.</h4>
@@ -11,4 +11,4 @@ const Home = () => {
   );
 }
 
-export default Home;
+export default LoginOrSignup;

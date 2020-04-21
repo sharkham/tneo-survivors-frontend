@@ -11,7 +11,7 @@ import NovelPage from './components/NovelPage';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import AllNovelsIndex from './components/AllNovelsIndex';
-import Home from './components/Home';
+import LoginOrSignup from './components/LoginOrSignup';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser'
 // import { getNovel } from './actions/currentNovel'
@@ -39,7 +39,7 @@ class App extends Component {
             <Route exact path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
             {/* Eventually change this to username, if they're current_user? */}
             <Route path="/novel">{loggedIn ? <NovelPage/> : <Redirect to="/"/>}</Route>
-            <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <Home/>} />
+            <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <LoginOrSignup/>} />
           </Switch>
         </div>
     );
