@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3000/api/v1/novels"
+const baseURL = "http://localhost:3000/api/v1/"
 
 //synchronous action creators
 
@@ -11,9 +11,9 @@ export const addNovel = novel => {
 
 
 //asynchronous action creators
-export const createNovel = (novel) => {
+export const createNovel = (novel, user) => {
   return dispatch => {
-    return fetch(`${baseURL}`, {
+    return fetch(`${baseURL}/${user.id}/novels`, {
       credentials: "include",
       method: "POST",
       headers: {
