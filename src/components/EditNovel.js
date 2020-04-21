@@ -1,12 +1,12 @@
 import React from 'react';
 import NovelForm from './NovelForm';
 
-const EditNovel = (props) => {
+const EditNovel = ({ novel }) => {
   const currentNovelDetails = {
-    title: props.novel.title,
-    summary: props.novel.summary,
-    plan: props.novel.plan,
-    goal: props.novel.goal
+    title: novel.title,
+    summary: novel.summary,
+    plan: novel.plan,
+    goal: novel.goal
   }
   return (
     <div>
