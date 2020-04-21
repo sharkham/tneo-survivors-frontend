@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import {
-  Switch,
-  Route,
-  Redirect
-} from 'react-router-dom';
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './components/NavBar';
-import NovelPage from './components/NovelPage';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import AllNovelsIndex from './components/AllNovelsIndex';
-import LoginOrSignup from './components/LoginOrSignup';
+// import {
+//   Switch,
+//   Route,
+//   Redirect
+// } from 'react-router-dom';
+// import logo from './logo.svg';
+// import './App.css';
+// import NavBar from './components/NavBar';
+// import NovelPage from './components/NovelPage';
+// import Login from './components/Login';
+// import Signup from './components/Signup';
+// import AllNovelsIndex from './components/AllNovelsIndex';
+// import LoginOrSignup from './components/LoginOrSignup';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser'
 import HomePage from './components/HomePage'

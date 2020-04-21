@@ -3,7 +3,6 @@ import NovelInfo from './NovelInfo';
 import CreateNovel from './CreateNovel';
 import EditNovel from './EditNovel';
 import NovelBadgesContainer from './NovelBadgesContainer';
-import UserInfo from './UserInfo'
 import { connect } from 'react-redux';
 import { Route, Switch, Redirect } from "react-router-dom";
 
