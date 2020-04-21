@@ -3,6 +3,7 @@ import NovelInfo from './NovelInfo';
 import NovelBadgesContainer from './NovelBadgesContainer';
 import UserInfo from './UserInfo'
 import { connect } from 'react-redux';
+import { Route, Switch } from "react-router-dom";
 
 class UserPage extends Component {
 
@@ -29,8 +30,11 @@ class UserPage extends Component {
         {/* Maybe turn this into a stateless functional component where username is passed down as props */}
         {/* <h1>{this.renderUsername()}</h1> */}
         <UserInfo name={this.props.user.name} username={this.props.user.username}/>
-        <NovelInfo />
-        <NovelBadgesContainer />
+        <Switch>
+
+        </Switch>
+        {/* <NovelInfo />
+        <NovelBadgesContainer /> */}
       </div>
     );
   }
