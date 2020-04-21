@@ -1,5 +1,6 @@
 import React from 'react';
 import NovelForm from './NovelForm';
+import { Link } from 'react-router-dom';
 
 const EditNovel = ({ novel }) => {
   const currentNovelDetails = {
@@ -12,6 +13,7 @@ const EditNovel = ({ novel }) => {
     <div>
       <p>Edit your novel:</p>
       <NovelForm initialForm={currentNovelDetails}/>
+      <Link to="/novel">Back</Link>
     </div>
   );
 }
