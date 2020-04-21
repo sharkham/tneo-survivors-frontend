@@ -31,7 +31,7 @@ class UserPage extends Component {
         {/* Maybe turn this into a stateless functional component where username is passed down as props */}
         {/* <h1>{this.renderUsername()}</h1> */}
         <UserInfo name={this.props.user.name} username={this.props.user.username}/>
-        <Switch>
+        {/* <Switch>
           <Route
             path="/profile/novels/:novelId/edit"
             render={data => {
@@ -52,9 +52,9 @@ class UserPage extends Component {
               );
             }}
           />
-        </Switch>
-        {/* <NovelInfo />
-        <NovelBadgesContainer /> */}
+        </Switch> */}
+        <NovelInfo />
+        <NovelBadgesContainer />
       </div>
     );
   }
