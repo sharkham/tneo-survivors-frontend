@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NovelInfo from './NovelInfo';
+import NovelForm from './NovelForm';
 import NovelBadgesContainer from './NovelBadgesContainer';
 import UserInfo from './UserInfo'
 import { connect } from 'react-redux';
@@ -31,7 +32,26 @@ class UserPage extends Component {
         {/* <h1>{this.renderUsername()}</h1> */}
         <UserInfo name={this.props.user.name} username={this.props.user.username}/>
         <Switch>
-
+          <Route
+            path="/profile/novels/:novelId/edit"
+            render={data => {
+              return (
+                <div>Novel Form</div>
+                // <NovelForm
+                //   novelId={data.match.params.novelId}
+                // />
+              );
+            }}
+          />
+          <Route
+            path="/profile/novels/:novelId"
+            render={data => {
+              return (
+                <div>Novel Info</div>
+                // <NovelInfo novelId={data.match.params.novelId} />
+              );
+            }}
+          />
         </Switch>
         {/* <NovelInfo />
         <NovelBadgesContainer /> */}
