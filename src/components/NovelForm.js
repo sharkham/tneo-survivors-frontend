@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 
 class NovelForm extends Component {
-  state = {
-    title: "",
-    summary: "",
-    plan: "",
-    goal: ""
-  }
+  state = this.props.initialForm
 
   planTypes = () => {
     return [
