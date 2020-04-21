@@ -30,7 +30,13 @@ class NovelForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
-    console.log(this.state)
+    const novel = {
+      ...this.state
+    }
+    this.props.submitAction(novel, this.props.user)
+    // console.log(this.props.submitAction)
+    // console.log(this.props.user)
+    // console.log(novel)
     // this.props.patchWordCount(updatedNovel)
 
     this.setState({

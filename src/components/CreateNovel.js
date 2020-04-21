@@ -1,7 +1,10 @@
 import React from 'react';
-import NovelForm from './NovelForm'
+import NovelForm from './NovelForm';
+import { connect } from 'react-redux';
+import { createNovel } from '../actions/novels';
 
-const CreateNovel = () => {
+
+const CreateNovel = (props) => {
   const emptyForm = {
     title: "",
     summary: "",
@@ -11,9 +14,21 @@ const CreateNovel = () => {
   return (
     <div>
       <p>Create your novel: </p>
-      <NovelForm initialForm={emptyForm}/>
+      <NovelForm initialForm={emptyForm} submitAction={props.createNovel} user={props.user}/>
     </div>
   );
 }
 
-export default CreateNovel;
+const mapStateToProps = state => {
+  return {
+    user: state.currentUser
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    createNovel: novel => dispatch(createNovel(novel))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateNovel);

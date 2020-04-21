@@ -15,7 +15,7 @@ export const addNovel = novel => {
 //asynchronous action creators
 export const createNovel = (novel, user) => {
   return dispatch => {
-    return fetch(`${baseURL}/${user.id}/novels`, {
+    return fetch(`${baseURL}/users/${user.id}/novels`, {
       credentials: "include",
       method: "POST",
       headers: {
