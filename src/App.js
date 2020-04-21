@@ -14,7 +14,7 @@ import AllNovelsIndex from './components/AllNovelsIndex';
 import LoginOrSignup from './components/LoginOrSignup';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser'
-import Home from './components/Home'
+import HomePage from './components/HomePage'
 // import { getNovel } from './actions/currentNovel'
 
 class App extends Component {
@@ -29,7 +29,7 @@ class App extends Component {
   render() {
     const loggedIn = this.props.loggedIn
     return (
-      <Home />
+      <HomePage />
         // <div>
         //   <NavBar />
         //   {/* This will eventually lead to the view page */}

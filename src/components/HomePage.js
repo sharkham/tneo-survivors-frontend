@@ -14,7 +14,7 @@ import { connect } from 'react-redux';
 import { getCurrentUser } from '../actions/currentUser'
 // import { getNovel } from './actions/currentNovel'
 
-class Home extends Component {
+class HomePage extends Component {
 
   componentDidMount() {
     if (!this.props.currentUser) {
@@ -30,7 +30,7 @@ class Home extends Component {
           <NavBar />
           {/* This will eventually lead to the view page */}
           {/* Should there be a main page here instead that has the routes to things?
-          Would take conditional rendering out of Home class */}
+          Would take conditional rendering out of HomePage class */}
           <Switch>
 
             <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
@@ -51,5 +51,5 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getCurrentUser })(Home);
+export default connect(mapStateToProps, { getCurrentUser })(HomePage);
 
