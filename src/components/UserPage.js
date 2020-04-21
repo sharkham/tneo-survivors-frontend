@@ -52,8 +52,8 @@ class UserPage extends Component {
             }}
           />
         </Switch> */}
-        <CreateNovel />
-        <EditNovel novel={this.props.novel}/>
+        {/* <CreateNovel />
+        <EditNovel novel={this.props.novel}/> */}
         <NovelInfo />
         <NovelBadgesContainer />
       </div>
