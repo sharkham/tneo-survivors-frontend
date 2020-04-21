@@ -26,7 +26,6 @@ class NovelPage extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.currentUser,
     novel: state.currentNovel,
     hasNovel: !!state.currentNovel
   }
