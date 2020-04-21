@@ -53,7 +53,7 @@ class UserPage extends Component {
           />
         </Switch> */}
         <CreateNovel />
-        <EditNovel />
+        <EditNovel novel={this.props.novel}/>
         <NovelInfo />
         <NovelBadgesContainer />
       </div>
@@ -63,7 +63,8 @@ class UserPage extends Component {
 
 const mapStateToProps = state => {
   return {
-    user: state.currentUser
+    user: state.currentUser,
+    novel: state.currentNovel
   }
 }
 

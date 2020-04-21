@@ -3,10 +3,10 @@ import NovelForm from './NovelForm';
 
 const EditNovel = (props) => {
   const currentNovelDetails = {
-    title: props.title,
-    summary: props.summary,
-    plan: props.plan,
-    goal: props.goal
+    title: props.novel.title,
+    summary: props.novel.summary,
+    plan: props.novel.plan,
+    goal: props.novel.goal
   }
   return (
     <div>
