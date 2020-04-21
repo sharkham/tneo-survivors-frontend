@@ -28,8 +28,7 @@ export const createNovel = (novel, user) => {
       if (novel.error) {
         alert(novel.error)
       } else {
-        console.log("Add Novel!")
-        // dispatch(addNovel(novel))
+        dispatch(addNovel(novel))
         // dispatch(getNovel(novel))
       }
     })
