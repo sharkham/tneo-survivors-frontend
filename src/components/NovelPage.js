@@ -68,7 +68,7 @@ class NovelPage extends Component {
         {/* <CreateNovel /> */}
         {/* <EditNovel novel={this.props.novel}/> */}
         {/* <NovelInfo /> */}
-        <NovelBadgesContainer />
+        {/* <NovelBadgesContainer /> */}
       </div>
     );
   }
