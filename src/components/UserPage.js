@@ -30,15 +30,14 @@ class UserPage extends Component {
         {/* Add conditional rendering--if User has no novel User is prompted to create novel */}
         {/* {this.createNovelPrompt()} */}
         <UserInfo name={this.props.user.name} username={this.props.user.username}/>
-        {/* <Switch>
+        <Switch>
           <Route
             path="/profile/novels/:novelId/edit"
             render={data => {
               return (
-                <div>Novel Form</div>
-                // <NovelForm
-                //   novelId={data.match.params.novelId}
-                // />
+                <EditNovel
+                  novelId={data.match.params.novelId}
+                />
               );
             }}
           />
@@ -51,7 +50,7 @@ class UserPage extends Component {
               );
             }}
           />
-        </Switch> */}
+        </Switch>
         {/* <CreateNovel />
         <EditNovel novel={this.props.novel}/> */}
         <NovelInfo />
