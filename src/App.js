@@ -14,6 +14,7 @@ import AllNovelsIndex from './components/AllNovelsIndex';
 import LoginOrSignup from './components/LoginOrSignup';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser'
+import Home from './components/Home'
 // import { getNovel } from './actions/currentNovel'
 
 class App extends Component {
@@ -28,20 +29,21 @@ class App extends Component {
   render() {
     const loggedIn = this.props.loggedIn
     return (
-        <div>
-          <NavBar />
-          {/* This will eventually lead to the view page */}
-          {/* Should there be a main page here instead that has the routes to things?
-          Would take conditional rendering out of App class */}
-          <Switch>
+      <Home />
+        // <div>
+        //   <NavBar />
+        //   {/* This will eventually lead to the view page */}
+        //   {/* Should there be a main page here instead that has the routes to things?
+        //   Would take conditional rendering out of App class */}
+        //   <Switch>
 
-            <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
-            <Route exact path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
-            {/* Eventually change this to username, if they're current_user? */}
-            <Route path="/novel">{loggedIn ? <NovelPage/> : <Redirect to="/"/>}</Route>
-            <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <LoginOrSignup/>} />
-          </Switch>
-        </div>
+        //     <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
+        //     <Route exact path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
+        //     {/* Eventually change this to username, if they're current_user? */}
+        //     <Route path="/novel">{loggedIn ? <NovelPage/> : <Redirect to="/"/>}</Route>
+        //     <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <LoginOrSignup/>} />
+        //   </Switch>
+        // </div>
     );
   }
 }
