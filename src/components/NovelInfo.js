@@ -17,26 +17,28 @@ class NovelInfo extends Component {
 
   //this component should only display if user has a novel, the "create a novel" flicker is frustrating
   //and create a novel should be a different component
-  novelInfoOrPrompt = () => {
-    if (!!this.props.novel) {
-      return (
-        <div>
-          <BasicInfoDisplay novel={this.props.novel}/>
-          <UpdateWordCountForm novel={this.props.novel} wordcount={this.props.novel.wordcount} patchWordCount={this.props.patchWordCount}/>
-        </div>
-      );
-    } else {
-      return (
-        <CreateNovel/>
-      )
-    }
+  // novelInfoOrPrompt = () => {
+  //   // if (!!this.props.novel) {
+  //     return (
+  //       <div>
+  //         <BasicInfoDisplay novel={this.props.novel}/>
+  //         <UpdateWordCountForm novel={this.props.novel} wordcount={this.props.novel.wordcount} patchWordCount={this.props.patchWordCount}/>
+  //       </div>
+  //     );
+  //   // } else {
+  //   //   return (
+  //   //     <CreateNovel/>
+  //   //   )
+  //   // }
 
-  }
+  // }
 
   render() {
     return (
       <div>
-        {this.novelInfoOrPrompt()}
+        <BasicInfoDisplay novel={this.props.novel}/>
+        <UpdateWordCountForm novel={this.props.novel} wordcount={this.props.novel.wordcount} patchWordCount={this.props.patchWordCount}/>
+        {/* {this.novelInfoOrPrompt()} */}
         {/* <BasicInfoDisplay />
         <UpdateWordCountForm /> */}
       </div>

@@ -5,7 +5,7 @@ import EditNovel from './EditNovel';
 import NovelBadgesContainer from './NovelBadgesContainer';
 import UserInfo from './UserInfo'
 import { connect } from 'react-redux';
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 
 class NovelPage extends Component {
 
@@ -41,6 +41,20 @@ class NovelPage extends Component {
               );
             }}
           />
+          {/* <Route
+            path="/novel/create"
+            render={data => {
+              return (
+                <EditNovel
+                  novelId={data.match.params.novelId}
+                />
+              );
+            }}
+          /> */}
+          <Route exact path="/novel/create">{this.props.hasNovel ? <Redirect to="/novel"/> : <CreateNovel/>}</Route>
+
+          <Route path="/novel">{this.props.hasNovel ? <div><NovelInfo/><NovelBadgesContainer/></div> : <Redirect to="/novel/create"/>}</Route>
+
           <Route
             path="/novel"
             render={data => {
@@ -53,7 +67,7 @@ class NovelPage extends Component {
         </Switch>
         {/* <CreateNovel /> */}
         {/* <EditNovel novel={this.props.novel}/> */}
-        <NovelInfo />
+        {/* <NovelInfo /> */}
         <NovelBadgesContainer />
       </div>
     );
@@ -63,7 +77,8 @@ class NovelPage extends Component {
 const mapStateToProps = state => {
   return {
     user: state.currentUser,
-    novel: state.currentNovel
+    novel: state.currentNovel,
+    hasNovel: !!state.currentNovel
   }
 }
 
