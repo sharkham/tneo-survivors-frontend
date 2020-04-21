@@ -1,6 +1,6 @@
 // import { getNovel } from './currentNovel'
 
-const baseURL = "http://localhost:3000/api/v1/"
+const baseURL = "http://localhost:3000/api/v1"
 
 //synchronous action creators
 
@@ -28,7 +28,8 @@ export const createNovel = (novel, user) => {
       if (novel.error) {
         alert(novel.error)
       } else {
-        dispatch(addNovel(novel))
+        console.log("Add Novel!")
+        // dispatch(addNovel(novel))
         // dispatch(getNovel(novel))
       }
     })
