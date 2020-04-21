@@ -4,6 +4,8 @@ import BasicInfoDisplay from './BasicInfoDisplay';
 import CreateNovel from './CreateNovel'
 import { connect } from 'react-redux';
 import { getNovel, patchWordCount } from '../actions/currentNovel';
+import { Link } from 'react-router-dom';
+
 
 
 class NovelInfo extends Component {
@@ -13,6 +15,7 @@ class NovelInfo extends Component {
     return (
       <div>
         <BasicInfoDisplay novel={this.props.novel}/>
+        <Link to="/novel/edit">Edit Novel</Link>
         <UpdateWordCountForm novel={this.props.novel} wordcount={this.props.novel.wordcount} patchWordCount={this.props.patchWordCount}/>
       </div>
     );
