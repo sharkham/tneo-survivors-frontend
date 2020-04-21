@@ -9,21 +9,6 @@ import { Route, Switch, Redirect } from "react-router-dom";
 
 class NovelPage extends Component {
 
-
-  // createNovelPrompt = () => {
-  //   if (!this.novel) {
-  //     return <p>Create a novel for this year?</p>
-  //   } else {
-  //     return <p>Novel exists, cool</p>
-  //   }
-  // }
-
-  // renderUsername = () => {
-  //   if (!!this.props.user) {
-  //     return this.props.user.name
-  //   }
-  // }
-
   render() {
     return (
       <div>
