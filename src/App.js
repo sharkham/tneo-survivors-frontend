@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Switch,
   Route,
   Redirect
 } from 'react-router-dom';
@@ -32,13 +33,14 @@ class App extends Component {
           {/* This will eventually lead to the view page */}
           {/* Should there be a main page here instead that has the routes to things?
           Would take conditional rendering out of App class */}
-          <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <Home/>} />
-          <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
-          <Route exact path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
-          {/* Eventually change this to username, if they're current_user? */}
-          {/* <Route path="/profile" render={routerProps => loggedIn ? <UserPage {...routerProps}/> : <Redirect to="/"/> }/> */}
-          <Route path="/profile">{loggedIn ? <UserPage/> : <Redirect to="/"/>}</Route>
-          {/* <Route path='/movies' render={routerProps => <MoviesPage {...routerProps} movies={this.state.movies}/>} /> */}
+          <Switch>
+
+            <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
+            <Route exact path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
+            {/* Eventually change this to username, if they're current_user? */}
+            <Route path="/profile">{loggedIn ? <UserPage/> : <Redirect to="/"/>}</Route>
+            <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <Home/>} />
+          </Switch>
         </div>
     );
   }

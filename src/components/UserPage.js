@@ -44,7 +44,7 @@ class UserPage extends Component {
             }}
           />
           <Route
-            path="/profile/novels/:novelId"
+            path="/profile/novels/"
             render={data => {
               return (
                 <div>Novel Info</div>
