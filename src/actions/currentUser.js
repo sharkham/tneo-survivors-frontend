@@ -1,5 +1,7 @@
 import { getNovel } from './currentNovel'
 
+const baseURL = "http://localhost:3000/api/v1/"
+
 //synchronous action creators
 
 //for this action we have a user object in hand
@@ -21,7 +23,7 @@ export const clearCurrentUser = () => {
 //asynchronous action creators
 export const login = credentials => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/login", {
+    return fetch(`${baseURL}/login`, {
       //still creating something--creating a session, that's why it's a POST
       credentials: "include",
       method: "POST",
@@ -50,7 +52,7 @@ export const signup = credentials => {
       user: credentials
     }
     console.log(userInfo)
-    return fetch("http://localhost:3000/api/v1/signup", {
+    return fetch(`${baseURL}/signup`, {
       //still creating something--creating a session, that's why it's a POST
       credentials: "include",
       method: "POST",
@@ -77,7 +79,7 @@ export const logout = () => {
   return dispatch => {
     //logging them out immediately on front end
     dispatch(clearCurrentUser())
-    return fetch("http://localhost:3000/api/v1/logout", {
+    return fetch(`${baseURL}/logout`, {
       credentials: "include",
       method: "DELETE"
     })
@@ -86,7 +88,7 @@ export const logout = () => {
 
 export const getCurrentUser = () => {
   return dispatch => {
-    return fetch("http://localhost:3000/api/v1/get_current_user", {
+    return fetch(`${baseURL}/get_current_user`, {
       credentials: "include",
       method: "GET",
       headers: {
