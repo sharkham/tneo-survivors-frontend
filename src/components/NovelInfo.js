@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import UpdateWordCountForm from './UpdateWordCountForm';
 import BasicInfoDisplay from './BasicInfoDisplay';
-import NovelForm from './NovelForm'
+import CreateNovel from './CreateNovel'
 import { connect } from 'react-redux';
 import { getNovel, patchWordCount } from '../actions/currentNovel';
 
@@ -27,7 +27,7 @@ class NovelInfo extends Component {
       );
     } else {
       return (
-        <NovelForm/>
+        <CreateNovel/>
       )
     }
 
