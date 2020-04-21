@@ -7,7 +7,7 @@ import UserInfo from './UserInfo'
 import { connect } from 'react-redux';
 import { Route, Switch } from "react-router-dom";
 
-class UserPage extends Component {
+class NovelPage extends Component {
 
 
   // createNovelPrompt = () => {
@@ -29,10 +29,10 @@ class UserPage extends Component {
       <div>
         {/* Add conditional rendering--if User has no novel User is prompted to create novel */}
         {/* {this.createNovelPrompt()} */}
-        <UserInfo name={this.props.user.name} username={this.props.user.username}/>
+        {/* <UserInfo name={this.props.user.name} username={this.props.user.username}/> */}
         <Switch>
           <Route
-            path="/profile/novels/:novelId/edit"
+            path="/novel/edit"
             render={data => {
               return (
                 <EditNovel
@@ -42,7 +42,7 @@ class UserPage extends Component {
             }}
           />
           <Route
-            path="/profile/novels/"
+            path="/novel"
             render={data => {
               return (
                 <div>Novel Info</div>
@@ -69,4 +69,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps)(UserPage);
+export default connect(mapStateToProps)(NovelPage);

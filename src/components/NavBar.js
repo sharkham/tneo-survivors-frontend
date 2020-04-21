@@ -19,7 +19,7 @@ class NavBar extends Component {
           { this.props.currentUser ? <li>Welcome, {this.props.currentUser.name}</li> : "" }
           <li><a href="/">Home</a></li>
           <li>About</li>
-          { this.props.currentUser ? <li><Link to="/profile">Profile</Link></li> : "" }
+          { this.props.currentUser ? <li><Link to="/novel">Novel</Link></li> : "" }
           {/* <li><Link to="/profile">Profile</Link></li> */}
           { this.props.currentUser ? <li><Logout /></li> : ""}
         </ul>

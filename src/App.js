@@ -7,7 +7,7 @@ import {
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
-import UserPage from './components/UserPage';
+import NovelPage from './components/NovelPage';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import AllNovelsIndex from './components/AllNovelsIndex';
@@ -38,7 +38,7 @@ class App extends Component {
             <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
             <Route exact path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
             {/* Eventually change this to username, if they're current_user? */}
-            <Route path="/profile">{loggedIn ? <UserPage/> : <Redirect to="/"/>}</Route>
+            <Route path="/novel">{loggedIn ? <NovelPage/> : <Redirect to="/"/>}</Route>
             <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <Home/>} />
           </Switch>
         </div>
