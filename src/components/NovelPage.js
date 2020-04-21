@@ -51,11 +51,11 @@ class NovelPage extends Component {
               );
             }}
           /> */}
-          <Route exact path="/novel/create">{this.props.hasNovel ? <Redirect to="/novel"/> : <CreateNovel/>}</Route>
+          <Route path="/novel/create">{this.props.hasNovel ? <Redirect to="/novel"/> : <CreateNovel/>}</Route>
 
           <Route path="/novel">{this.props.hasNovel ? <div><NovelInfo/><NovelBadgesContainer/></div> : <Redirect to="/novel/create"/>}</Route>
 
-          <Route
+          {/* <Route
             path="/novel"
             render={data => {
               return (
@@ -63,7 +63,7 @@ class NovelPage extends Component {
                 // <NovelInfo novelId={data.match.params.novelId} />
               );
             }}
-          />
+          /> */}
         </Switch>
         {/* <CreateNovel /> */}
         {/* <EditNovel novel={this.props.novel}/> */}
