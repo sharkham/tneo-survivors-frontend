@@ -42,9 +42,7 @@ export const createNovel = (novel, user) => {
   }
 }
 
-export const patchNovel = (novel, user) => {
-  //this function does not need an argument of user, but createNovel does
-  //and having two arguments here makes the NovelForm reuseable
+export const patchNovel = (novel) => {
   return dispatch => {
     return fetch(`${baseURL}/novels/${novel.id}`, {
       credentials: "include",
