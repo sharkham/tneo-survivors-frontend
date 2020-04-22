@@ -42,6 +42,7 @@ class EditNovel extends Component {
       goal: parseInt(this.state.goal)
     }
     this.props.patchNovel(novel)
+    // this.props.history.push("/novel")
 
     // const novel = {
     //   ...this.state
