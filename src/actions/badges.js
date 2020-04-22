@@ -9,10 +9,10 @@ export const addBadge = badge => {
   }
 }
 
-export const deleteBadge = badge => {
+export const deleteBadge = badgeId => {
   return {
     type: "DELETE_BADGE",
-    badge
+    badgeId
   }
 }
 
