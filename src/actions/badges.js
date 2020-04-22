@@ -23,7 +23,7 @@ export const createBadge = (badge, novel) => {
     name: badge.name,
     description: badge.description,
     emoji: badge.emoji,
-    badgetypeId: badge.id
+    badgetype_id: badge.id
   }
   return dispatch => {
     return fetch(`${baseURL}/novels/${novel.id}/badges`, {
