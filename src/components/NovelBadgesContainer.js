@@ -11,7 +11,7 @@ class NovelBadgesContainer extends Component {
     return (
       <div>
         <BadgesForm badgetypes={this.props.badgetypes} novel={this.props.novel} createBadge={this.props.createBadge}/>
-        <Badges />
+        <Badges badges={this.props.badges}/>
       </div>
     );
   }
@@ -20,7 +20,8 @@ class NovelBadgesContainer extends Component {
 const mapStateToProps = state => {
   return {
     badgetypes: state.badgetypes,
-    novel: state.currentNovel
+    novel: state.currentNovel,
+    badges: state.currentNovel.badges
   }
 }
 
