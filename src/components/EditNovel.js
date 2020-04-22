@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { updateNovel } from '../actions/novels';
 
 
-const EditNovel = ({ novel }) => {
+const EditNovel = ({ novel, updateNovel, user }) => {
   const currentNovelDetails = {
     title: novel.title,
     summary: novel.summary,
@@ -15,7 +15,7 @@ const EditNovel = ({ novel }) => {
   return (
     <div>
       <p>Edit your novel:</p>
-      <NovelForm initialForm={currentNovelDetails} submitAction={props.updateNovel} user={props.user}/>
+      <NovelForm initialForm={currentNovelDetails} submitAction={updateNovel} user={user}/>
       <Link to="/novel">Back</Link>
     </div>
   );
