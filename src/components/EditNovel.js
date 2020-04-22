@@ -15,7 +15,7 @@ const EditNovel = ({ novel, patchNovel, user }) => {
   return (
     <div>
       <p>Edit your novel:</p>
-      <NovelForm initialForm={currentNovelDetails} submitAction={patchNovel} user={user}/>
+      <NovelForm initialForm={currentNovelDetails} submitAction={patchNovel} user={user} novel={novel}/>
       <Link to="/novel">Back</Link>
     </div>
   );
