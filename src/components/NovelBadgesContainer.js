@@ -26,7 +26,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-
     createBadge: (badge, novel) => dispatch(createBadge(badge, novel))
   }
 }
