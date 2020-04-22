@@ -59,7 +59,8 @@ export const patchNovel = (novel, user) => {
       if (novel.error) {
         alert(novel.error)
       } else {
-        dispatch(updateNovel(novel))
+        // dispatch(updateNovel(novel))
+        console.log("Firing update novel")
         // dispatch(getNovel(novel))
       }
     })
