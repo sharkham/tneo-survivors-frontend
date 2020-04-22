@@ -34,7 +34,8 @@ class CreateNovel extends Component {
     event.preventDefault()
 
     const novel = {
-      ...this.state
+      ...this.state,
+      goal: parseInt(this.state.goal)
     }
     this.props.createNovel(novel, this.props.user)
     // console.log(this.props.submitAction)
