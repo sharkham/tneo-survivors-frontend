@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Badges from './Badges';
 import BadgesForm from './BadgesForm';
-import { createBadge } from '../actions/badges';
+import { createBadge, destroyBadge } from '../actions/badges';
 import { connect } from 'react-redux';
 
 class NovelBadgesContainer extends Component {
@@ -11,7 +11,7 @@ class NovelBadgesContainer extends Component {
     return (
       <div>
         <BadgesForm badgetypes={this.props.badgetypes} novel={this.props.novel} createBadge={this.props.createBadge}/>
-        <Badges badges={this.props.badges}/>
+        <Badges badges={this.props.badges} destroyBadge={this.props.destroyBadge}/>
       </div>
     );
   }
@@ -27,7 +27,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    createBadge: (badge, novel) => dispatch(createBadge(badge, novel))
+    createBadge: (badge, novel) => dispatch(createBadge(badge, novel)),
+    destroyBadge: badgeId => dispatch(destroyBadge(badgeId))
   }
 }
 
