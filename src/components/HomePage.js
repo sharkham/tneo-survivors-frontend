@@ -11,17 +11,10 @@ import Signup from './Signup';
 import AllNovelsIndex from './AllNovelsIndex';
 import LoginOrSignup from './LoginOrSignup';
 import { connect } from 'react-redux';
-import { getCurrentUser } from '../actions/currentUser'
+// import { getCurrentUser } from '../actions/currentUser'
 // import { getNovel } from './actions/currentNovel'
 
 class HomePage extends Component {
-
-  componentDidMount() {
-    if (!this.props.currentUser) {
-      this.props.getCurrentUser()
-      // this.props.getNovel()
-    }
-  }
 
   render() {
     const loggedIn = this.props.loggedIn
@@ -46,10 +39,9 @@ class HomePage extends Component {
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.currentUser,
     loggedIn: !!state.currentUser
   }
 }
 
-export default connect(mapStateToProps, { getCurrentUser })(HomePage);
+export default connect(mapStateToProps)(HomePage);
 
