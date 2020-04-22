@@ -34,6 +34,14 @@ class EditNovel extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
+    const novel = {
+      ...this.props.novel,
+      title: this.state.title,
+      summary: this.state.summary,
+      plan: this.state.plan,
+      goal: parseInt(this.state.goal)
+    }
+    console.log(novel)
 
     // const novel = {
     //   ...this.state
