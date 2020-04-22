@@ -46,27 +46,22 @@ export const createBadge = (badge, novel) => {
   }
 }
 
-// export const destroyBadge = badgeId => {
-//   return dispatch => {
-//     return fetch(`${baseURL}/novels/${novel.id}/badges`, {
-//       credentials: "include",
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify(badge)
-//     })
-//     .then(res => res.json())
-//     .then(badge => {
-//       if (badge.error) {
-//         alert(badge.error)
-//       } else {
-//         dispatch(addBadge(badge))
-//       }
-//     })
-//     .catch(console.log)
-//   }
-// }
+export const destroyBadge = badgeId => {
+  return dispatch => {
+    return fetch(`${baseURL}/badges/${badgeId}`, {
+      credentials: "include",
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    })
+    .then(res => res.json())
+    .then(res => {
+      console.log(res)
+    })
+    .catch(console.log)
+  }
+}
 
 // export const getBadges = (novel) => {
 //   console.log("get badges")
