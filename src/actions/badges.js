@@ -55,9 +55,7 @@ export const destroyBadge = badgeId => {
         "Content-Type": "application/json"
       }
     })
-    // .then(res => res.json())
     .then(() => {
-      console.log("deleting")
       dispatch(deleteBadge(badgeId))
     })
     .catch(console.log)
