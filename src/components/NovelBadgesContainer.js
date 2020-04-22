@@ -9,7 +9,7 @@ class NovelBadgesContainer extends Component {
   render() {
     return (
       <div>
-        <BadgesForm badgetypes={this.props.badgetypes}/>
+        <BadgesForm badgetypes={this.props.badgetypes} novel={this.props.novel} createBadge={this.props.createBadge}/>
         <Badges />
       </div>
     );
@@ -18,8 +18,13 @@ class NovelBadgesContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    badgetypes: state.badgetypes
+    badgetypes: state.badgetypes,
+    novel: state.currentNovel
   }
 }
 
-export default connect(mapStateToProps)(NovelBadgesContainer);
+const mapDispatchToProps = dispatch => {
+  createBadge: (badge, novel) => dispatch(createBadge(badge, novel))
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NovelBadgesContainer);
