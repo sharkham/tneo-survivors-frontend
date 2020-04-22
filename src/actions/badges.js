@@ -33,8 +33,7 @@ export const createBadge = (badge, novel) => {
       if (badge.error) {
         alert(badge.error)
       } else {
-        console.log("addBadge will fire here")
-        // dispatch(addBadge(badge))
+        dispatch(addBadge(badge))
       }
     })
     .catch(console.log)
