@@ -2,6 +2,13 @@ const baseURL = "http://localhost:3000/api/v1"
 
 //synchronous action creators
 
+export const addBadge = badge => {
+  return {
+    type: "ADD_BADGE",
+    badge
+  }
+}
+
 // export const setBadges = badges => {
 //   return {
 //     type: "SET_BADGES",
@@ -10,6 +17,29 @@ const baseURL = "http://localhost:3000/api/v1"
 // }
 
 //asynchronous action creators
+
+export const createBadge = (badge, novel) => {
+  return dispatch => {
+    return fetch(`${baseURL}/novels/${novel.id}/badges`, {
+      credentials: "include",
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(badge)
+    })
+    .then(res => res.json())
+    .then(badge => {
+      if (badge.error) {
+        alert(badge.error)
+      } else {
+        console.log("addBadge will fire here")
+        // dispatch(addBadge(badge))
+      }
+    })
+    .catch(console.log)
+  }
+}
 
 // export const getBadges = (novel) => {
 //   console.log("get badges")
