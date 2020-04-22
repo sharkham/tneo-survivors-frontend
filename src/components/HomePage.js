@@ -10,6 +10,7 @@ import Login from './Login';
 import Signup from './Signup';
 import AllNovelsIndex from './AllNovelsIndex';
 import LoginOrSignup from './LoginOrSignup';
+import AboutPage from './AboutPage'
 import { connect } from 'react-redux';
 // import { getCurrentUser } from '../actions/currentUser'
 // import { getNovel } from './actions/currentNovel'
@@ -28,6 +29,7 @@ class HomePage extends Component {
 
             <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
             <Route exact path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
+            <Route exact path="/about">{loggedIn ? <AboutPage /> : <Redirect to="/"/>}</Route>
             {/* Eventually change this to username, if they're current_user? */}
             <Route path="/novel">{loggedIn ? <NovelPage/> : <Redirect to="/"/>}</Route>
             <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <LoginOrSignup/>} />
