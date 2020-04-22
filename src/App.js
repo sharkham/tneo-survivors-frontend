@@ -14,6 +14,7 @@ import React, { Component } from 'react';
 // import LoginOrSignup from './components/LoginOrSignup';
 import { connect } from 'react-redux';
 import { getCurrentUser } from './actions/currentUser'
+import { getBadgetypes } from './actions/badgetypes'
 import HomePage from './components/HomePage'
 // import { getNovel } from './actions/currentNovel'
 
@@ -22,6 +23,7 @@ class App extends Component {
   componentDidMount() {
     if (!this.props.currentUser) {
       this.props.getCurrentUser()
+      this.props.getBadgetypes()
       // this.props.getNovel()
     }
   }
@@ -55,5 +57,5 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { getCurrentUser })(App);
+export default connect(mapStateToProps, { getCurrentUser, getBadgetypes })(App);
 
