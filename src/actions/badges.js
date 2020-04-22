@@ -58,6 +58,7 @@ export const destroyBadge = badgeId => {
     .then(res => res.json())
     .then(res => {
       console.log(res)
+      // dispatch(deleteBadge(badgeId))
     })
     .catch(console.log)
   }
