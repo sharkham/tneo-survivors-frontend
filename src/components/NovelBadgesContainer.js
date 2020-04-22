@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Badges from './Badges';
 import BadgesForm from './BadgesForm';
+import { createBadge } from '../actions/badges';
 import { connect } from 'react-redux';
 
 class NovelBadgesContainer extends Component {
@@ -24,7 +25,10 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  createBadge: (badge, novel) => dispatch(createBadge(badge, novel))
+  return {
+
+    createBadge: (badge, novel) => dispatch(createBadge(badge, novel))
+  }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(NovelBadgesContainer);
