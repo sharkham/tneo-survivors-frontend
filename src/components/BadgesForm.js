@@ -22,12 +22,15 @@ class BadgesForm extends Component {
     event.preventDefault()
     const badgetype = this.getBadgetypeById(this.state.badgetypeId)
     console.log(badgetype)
+    this.setState({
+      badgetypeId: ""
+    })
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <select onChange={this.handleChange} name="badgetypeId" className="badgeselect">
+        <select onChange={this.handleChange} name="badgetypeId" className="badgeselect" value={this.state.badgetypeId}>
           <option value="">--Please choose a badge--</option>
           {this.props.badgetypes.map(badgetype => {
             //make new Option for each badgetype
