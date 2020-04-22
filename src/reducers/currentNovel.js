@@ -11,6 +11,11 @@ export default function currentNovel(state = null, action) {
         ...state,
         badges: [...state.badges, action.badge]
       }
+    case 'DELETE_BADGE':
+      return {
+        ...state,
+        badges: state.badges.filter(badge => badge.id !== action.badgeId)
+      }
     case 'CLEAR_CURRENT_USER':
       return null
     case 'UPDATE_CURRENT_NOVEL_WORDCOUNT':
