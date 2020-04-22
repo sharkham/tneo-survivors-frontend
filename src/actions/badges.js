@@ -19,6 +19,12 @@ export const deleteBadge = badgeId => {
 //asynchronous action creators
 
 export const createBadge = (badge, novel) => {
+  const badgeObj = {
+    name: badge.name,
+    description: badge.description,
+    emoji: badge.emoji,
+    badgetypeId: badge.id
+  }
   return dispatch => {
     return fetch(`${baseURL}/novels/${novel.id}/badges`, {
       credentials: "include",
@@ -26,7 +32,7 @@ export const createBadge = (badge, novel) => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(badge)
+      body: JSON.stringify(badgeObj)
     })
     .then(res => res.json())
     .then(badge => {
