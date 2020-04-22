@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import NovelForm from './NovelForm';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { patchNovel } from '../actions/novels';
 
@@ -42,7 +42,7 @@ class EditNovel extends Component {
       goal: parseInt(this.state.goal)
     }
     this.props.patchNovel(novel)
-    // this.props.history.push("/novel")
+    this.props.history.push("/novel")
 
     // const novel = {
     //   ...this.state
@@ -105,4 +105,4 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditNovel);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(EditNovel));
