@@ -11,9 +11,9 @@ export const addNovel = novel => {
   }
 }
 
-export const editNovel = novel => {
+export const updateNovel = novel => {
   return {
-    type: "EDIT_NOVEL",
+    type: "UPDATE_NOVEL",
     novel
   }
 }
@@ -35,6 +35,29 @@ export const createNovel = (novel, user) => {
         alert(novel.error)
       } else {
         dispatch(addNovel(novel))
+        // dispatch(getNovel(novel))
+      }
+    })
+    .catch(console.log)
+  }
+}
+
+export const patchNovel = (novel) => {
+  return dispatch => {
+    return fetch(`${baseURL}/novels/${novel.id}`, {
+      credentials: "include",
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(novel)
+    })
+    .then(res => res.json())
+    .then(novel => {
+      if (novel.error) {
+        alert(novel.error)
+      } else {
+        dispatch(updateNovel(novel))
         // dispatch(getNovel(novel))
       }
     })

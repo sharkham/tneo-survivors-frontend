@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3000/api/v1/"
+const baseURL = "http://localhost:3000/api/v1"
 
 //sync methods
 export const setCurrentNovel = novel => {
@@ -48,7 +48,7 @@ export const getNovel = user => {
 export const patchWordCount = novel => {
   console.log("patching word count")
   return dispatch => {
-    return fetch(`http://localhost:3000/api/v1/novels/${novel.id}`, {
+    return fetch(`${baseURL}/novels/${novel.id}`, {
       credentials: "include",
       method: "PATCH",
       headers: {
