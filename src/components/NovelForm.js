@@ -27,29 +27,29 @@ class NovelForm extends Component {
     })
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault()
+  // handleSubmit = (event) => {
+  //   event.preventDefault()
 
-    const novel = {
-      ...this.state
-    }
-    this.props.submitAction(novel, this.props.user)
-    // console.log(this.props.submitAction)
-    // console.log(this.props.user)
-    // console.log(novel)
-    // this.props.patchWordCount(updatedNovel)
+  //   const novel = {
+  //     ...this.state
+  //   }
+  //   this.props.submitAction(novel, this.props.user)
+  //   // console.log(this.props.submitAction)
+  //   // console.log(this.props.user)
+  //   // console.log(novel)
+  //   // this.props.patchWordCount(updatedNovel)
 
-    this.setState({
-      title: "",
-      summary: "",
-      plan: "",
-      goal: ""
-    })
-  }
+  //   this.setState({
+  //     title: "",
+  //     summary: "",
+  //     plan: "",
+  //     goal: ""
+  //   })
+  // }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.props.handleSubmit}>
         <label>
           Title:
           <input id="title" type="text" name="title" onChange={this.handleChange} value={this.state.title}/>
@@ -79,4 +79,5 @@ class NovelForm extends Component {
 }
 
 export default NovelForm;
+
 
