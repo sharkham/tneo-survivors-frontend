@@ -9,12 +9,12 @@ export const addBadge = badge => {
   }
 }
 
-// export const setBadges = badges => {
-//   return {
-//     type: "SET_BADGES",
-//     badges
-//   }
-// }
+export const deleteBadge = badge => {
+  return {
+    type: "DELETE_BADGE",
+    badge
+  }
+}
 
 //asynchronous action creators
 
