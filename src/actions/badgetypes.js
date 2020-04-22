@@ -29,7 +29,7 @@ export const getBadgetypes = () => {
       //   console.log(novels.error)
       // }
       console.log(badgetypes)
-      // dispatch(setBadgetypes(badgetypes))
+      dispatch(setBadgetypes(badgetypes))
     })
     .catch(console.log)
   }
