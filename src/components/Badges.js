@@ -1,11 +1,12 @@
 import React from 'react';
 import Badge from './Badge'
 
-const Badges = () => {
+const Badges = (props) => {
   return (
     <div>
-      List of Badges
-      <Badge />
+      {props.badges.map(badge => {
+        return <Badge key={badge.id} badge={badge}/>
+      })}
     </div>
   );
 }
