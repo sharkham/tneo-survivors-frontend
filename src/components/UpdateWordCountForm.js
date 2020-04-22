@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class UpdateWordCountForm extends Component {
   state = {
-    addedWords: "",
+    addedWords: 0,
     wordCount: this.props.wordcount
   }
 
@@ -20,19 +20,28 @@ class UpdateWordCountForm extends Component {
     }
   }
 
+  // updateWordCount = (wordCount, addedWords) => {
+  //   if (typeof wordCount === "number" && typeof addedWords === "number") {
+
+  //   }
+  // }
+
   handleSubmit = (event) => {
     event.preventDefault()
     const updatedWordCount = this.state.wordCount + parseInt(this.state.addedWords)
-    const updatedNovel = this.updateNovel(updatedWordCount)
-    console.log(updatedNovel)
+    // if (typeof updatedWordCount === "number") {
+      const updatedNovel = this.updateNovel(updatedWordCount)
+      this.props.patchWordCount(updatedNovel)
+      this.setState({
+        ...this.state,
+        addedWords: 0,
+        wordCount: updatedWordCount
+      })
+    // } else {
+    //   alert("Please enter a number")
+    // }
     //this also currently adds badges to currentNovel,
     //which currentNovel didn't have here because we were getting it from the user object
-    this.props.patchWordCount(updatedNovel)
-    this.setState({
-      ...this.state,
-      addedWords: "",
-      wordCount: updatedWordCount
-    })
   }
 
   render() {
