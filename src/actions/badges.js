@@ -53,12 +53,12 @@ export const destroyBadge = badgeId => {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
-      },
+      }
     })
-    .then(res => res.json())
-    .then(res => {
-      console.log(res)
-      // dispatch(deleteBadge(badgeId))
+    // .then(res => res.json())
+    .then(() => {
+      console.log("deleting")
+      dispatch(deleteBadge(badgeId))
     })
     .catch(console.log)
   }
