@@ -20,8 +20,8 @@ class BadgesForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    const badgetype = this.getBadgetypeById(this.state.badgetypeId)
-    console.log(badgetype)
+    const badge = this.getBadgetypeById(this.state.badgetypeId)
+    this.props.createBadge(badge, this.props.novel)
     this.setState({
       badgetypeId: ""
     })
