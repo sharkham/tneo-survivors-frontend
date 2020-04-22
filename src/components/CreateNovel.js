@@ -43,12 +43,12 @@ class CreateNovel extends Component {
     // console.log(novel)
     // this.props.patchWordCount(updatedNovel)
 
-    this.setState({
-      title: "",
-      summary: "",
-      plan: "",
-      goal: 0
-    })
+    // this.setState({
+    //   title: "",
+    //   summary: "",
+    //   plan: "",
+    //   goal: 0
+    // })
   }
 
   render() {
