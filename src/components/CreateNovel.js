@@ -87,8 +87,9 @@ class CreateNovel extends Component {
   }
 
   render() {
-
-      return (
+    return (
+      <div>
+        <p>Create your novel:</p>
         <form onSubmit={this.handleSubmit}>
           <label>
             Title:
@@ -114,8 +115,9 @@ class CreateNovel extends Component {
           </label>
           <input type="submit"/>
         </form>
-      );
-    }
+      </div>
+    );
+  }
 }
 
 const mapStateToProps = state => {

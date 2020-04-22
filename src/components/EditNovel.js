@@ -35,14 +35,11 @@ class EditNovel extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
-    const novel = {
-      ...this.state
-    }
-    this.props.createNovel(novel, this.props.user)
-    // console.log(this.props.submitAction)
-    // console.log(this.props.user)
-    // console.log(novel)
-    // this.props.patchWordCount(updatedNovel)
+    // const novel = {
+    //   ...this.state
+    // }
+    // this.props.patchNovel(novel)
+
 
     // this.setState({
     //   title: "",
