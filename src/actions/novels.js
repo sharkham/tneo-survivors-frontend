@@ -11,6 +11,12 @@ export const addNovel = novel => {
   }
 }
 
+export const editNovel = novel => {
+  return {
+    type: "EDIT_NOVEL",
+    novel
+  }
+}
 
 //asynchronous action creators
 export const createNovel = (novel, user) => {
