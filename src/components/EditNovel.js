@@ -1,6 +1,9 @@
 import React from 'react';
 import NovelForm from './NovelForm';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { updateNovel } from '../actions/novels';
+
 
 const EditNovel = ({ novel }) => {
   const currentNovelDetails = {
@@ -12,10 +15,22 @@ const EditNovel = ({ novel }) => {
   return (
     <div>
       <p>Edit your novel:</p>
-      <NovelForm initialForm={currentNovelDetails}/>
+      <NovelForm initialForm={currentNovelDetails} submitAction={props.updateNovel} user={props.user}/>
       <Link to="/novel">Back</Link>
     </div>
   );
 }
 
-export default EditNovel;
+const mapStateToProps = state => {
+  return {
+    user: state.currentUser
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    updateNovel: (novel, user) => dispatch(updateNovel(novel, user))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(EditNovel);
