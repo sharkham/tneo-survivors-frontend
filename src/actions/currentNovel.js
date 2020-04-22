@@ -17,7 +17,7 @@ export const updateWordCount = novel => {
 
 //async methods
 export const getNovel = user => {
-  console.log("getNovel")
+  // console.log("getNovel")
   return dispatch => {
     return fetch(`${baseURL}/users/${user.id}/novels`, {
       //grab the user, get the novel where the novel year matches current year.
