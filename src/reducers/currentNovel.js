@@ -7,7 +7,10 @@ export default function currentNovel(state = null, action) {
     case 'UPDATE_NOVEL':
       return action.novel
     case 'ADD_BADGE':
-      return action.novel
+      return {
+        ...state,
+        badges: [...state.badges, action.badge]
+      }
     case 'CLEAR_CURRENT_USER':
       return null
     case 'UPDATE_CURRENT_NOVEL_WORDCOUNT':
