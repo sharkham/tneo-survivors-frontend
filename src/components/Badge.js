@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Badge = () => {
+const Badge = ({ badge }) => {
   return (
     <div>
-      Badge
+      {badge.emoji} - {badge.name} - {badge.description} <button>Delete</button>
     </div>
   );
 }
