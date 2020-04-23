@@ -8,7 +8,7 @@ class AllNovelsIndex extends Component {
       <div>
         <p>All of this year's novels:</p>
         {this.props.novels.map(novel => {
-          return <NovelCard key={novel.id} novel={novel}/>
+          return <NovelCard key={novel.id} novel={novel} currentUser={this.props.currentUser}/>
         })}
       </div>
     );
@@ -17,7 +17,8 @@ class AllNovelsIndex extends Component {
 
 const mapStateToProps = state => {
   return {
-    novels: state.allCurrentNovels
+    novels: state.allCurrentNovels,
+    currentUser: state.currentUser
   }
 }
 
