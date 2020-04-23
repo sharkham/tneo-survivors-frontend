@@ -103,7 +103,7 @@ export const getCurrentUser = () => {
       } else {
         //dealing with the front end thing
         dispatch(setCurrentUser(user))
-        dispatch(getNovel(user))
+        dispatch(getNovels(user))
       }
     })
     .catch(console.log)
