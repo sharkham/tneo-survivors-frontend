@@ -10,7 +10,8 @@ import Login from './Login';
 import Signup from './Signup';
 import AllNovelsIndex from './AllNovelsIndex';
 import LoginOrSignup from './LoginOrSignup';
-import AboutPage from './AboutPage'
+import AboutPage from './AboutPage';
+import PreviousNovelsPage from './PreviousNovelsPage';
 import { connect } from 'react-redux';
 // import { getCurrentUser } from '../actions/currentUser'
 // import { getNovel } from './actions/currentNovel'
