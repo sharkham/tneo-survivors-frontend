@@ -16,6 +16,8 @@ export default function novels(state = [], action) {
           return novel;
         }
       })
+    case 'SET_OTHER_NOVELS':
+      return [...state, ...action.novels]
     default:
       return state
   }
