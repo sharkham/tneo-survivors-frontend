@@ -20,6 +20,7 @@ class NavBar extends Component {
           <li><Link to="/">Home</Link></li>
           { this.props.currentUser ? <li><Link to="/about">About</Link></li> : ""}
           { this.props.currentUser ? <li><Link to="/novel">Novel</Link></li> : "" }
+          { this.props.currentUser ? <li><Link to="/previous_novels">Previous Novels </Link></li> : ""}
           {/* Add previous novels page here later */}
           {/* <li><Link to="/profile">Profile</Link></li> */}
           { this.props.currentUser ? <li><Logout /></li> : ""}
