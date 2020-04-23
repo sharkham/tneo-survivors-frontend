@@ -18,6 +18,13 @@ export const updateNovel = novel => {
   }
 }
 
+export const updateWordCount = novel => {
+  return {
+    type: "UPDATE_CURRENT_NOVEL_WORDCOUNT",
+    novel
+  }
+}
+
 export const setCurrentNovel = novel => {
   return {
     type: "SET_CURRENT_NOVEL",
@@ -85,6 +92,28 @@ export const patchNovel = (novel) => {
       }
     })
     .catch(console.log)
+  }
+}
+
+export const patchWordCount = novel => {
+  console.log("patching word count")
+  return dispatch => {
+    return fetch(`${baseURL}/novels/${novel.id}`, {
+      credentials: "include",
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(novel)
+    })
+    .then(res => res.json())
+    .then(novel => {
+      if (novel.error) {
+        alert(novel.error)
+      } else {
+        dispatch(updateWordCount(novel))
+      }
+    })
   }
 }
 

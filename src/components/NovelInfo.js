@@ -3,7 +3,7 @@ import UpdateWordCountForm from './UpdateWordCountForm';
 import BasicInfoDisplay from './BasicInfoDisplay';
 import CreateNovel from './CreateNovel'
 import { connect } from 'react-redux';
-import { getNovel, patchWordCount } from '../actions/currentNovel';
+import { patchWordCount } from '../actions/novels';
 import { Link } from 'react-router-dom';
 
 
@@ -31,7 +31,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getNovel: user => dispatch(getNovel(user)),
+    // getNovel: user => dispatch(getNovel(user)),
     patchWordCount: novel => dispatch(patchWordCount(novel))
   }
 }
