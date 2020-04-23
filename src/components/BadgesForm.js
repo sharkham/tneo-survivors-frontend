@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
 
 class BadgesForm extends Component {
   //render the badges in the form from badgetype props passed down
@@ -50,7 +51,8 @@ class BadgesForm extends Component {
             return <option key={badgetype.id} value={badgetype.id}>{badgetype.emoji} - {badgetype.name} - {badgetype.description}</option>
           })}
         </select>
-        <input type="submit"/>
+        <Button color="secondary" size="sm">Submit</Button>
+        {/* <input type="submit"/> */}
       </form>
     );
   }
