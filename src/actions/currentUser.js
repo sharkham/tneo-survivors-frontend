@@ -1,4 +1,5 @@
 import { getNovel } from './currentNovel'
+import { getNovels } from './novels'
 
 const baseURL = "http://localhost:3000/api/v1/"
 
@@ -39,7 +40,7 @@ export const login = credentials => {
         alert(user.error)
       } else {
         dispatch(setCurrentUser(user))
-        dispatch(getNovel(user))
+        dispatch(getNovels(user))
       }
     })
     .catch(console.log)
