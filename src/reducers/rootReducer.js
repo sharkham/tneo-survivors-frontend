@@ -2,7 +2,7 @@
 // import manageReviews from './manageReview'
 import { combineReducers } from 'redux'
 import users from './users'
-import novels from './novels'
+import allCurrentNovels from './allCurrentNovels'
 // import badges from './badges'
 import badgetypes from './badgetypes'
 import currentUser from './currentUser'
@@ -11,7 +11,7 @@ import currentNovel from './currentNovel'
 const rootReducer = combineReducers({
   users,
   currentUser,
-  novels,
+  allCurrentNovels,
   currentNovel,
   // badges,
   badgetypes
