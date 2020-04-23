@@ -14,7 +14,7 @@ class NovelPage extends Component {
     return (
       <div>
         <Container>
-          <Row xs="2">
+          <Row>
             <Switch>
               <Route path="/novel/edit">{hasNovel ? <div><Col><EditNovel novel={this.props.novel}/></Col><Col><NovelBadgesContainer/></Col></div> : <Redirect to="/novel/create"/>}</Route>
               <Route path="/novel/create">{hasNovel ? <Redirect to="/novel"/> : <Col><CreateNovel/></Col>}</Route>
