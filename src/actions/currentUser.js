@@ -69,6 +69,7 @@ export const signup = credentials => {
         alert(user.error)
       } else {
         dispatch(setCurrentUser(user))
+        dispatch(getNovels(user))
       }
     })
     .catch(console.log)
