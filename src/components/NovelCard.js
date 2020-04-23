@@ -1,9 +1,9 @@
 import React from 'react';
 
-const NovelCard = (props) => {
+const NovelCard = ({ novel }) => {
   return (
     <div>
-      {props.novel.title}
+      {novel.title} - {novel.summary}
     </div>
   );
 }
