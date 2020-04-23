@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createNovel } from '../actions/novels';
+import { Col, Button, Form, FormGroup, Input, Label } from 'reactstrap';
 
 class CreateNovel extends Component {
 
@@ -54,32 +55,40 @@ class CreateNovel extends Component {
   render() {
     return (
       <div>
-        <p>Create your novel:</p>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Title:
-            <input id="title" type="text" name="title" onChange={this.handleChange} value={this.state.title}/>
-          </label>
-          <label>
-            Summary:
-            <input id="summary" type="textarea" name="summary" onChange={this.handleChange} value={this.state.summary}/>
-          </label>
-          <label>
-            Plan:
-            <select id="plan" name="plan" onChange={this.handleChange} value={this.state.plan}>
-              <option value="">--Please choose a plan--</option>
-              {this.planTypes().map(planType => {
-                //make new Option for each planType
-                return <option key={planType} value={planType}>{planType}</option>
-              })}
-            </select>
-          </label>
-          <label>
-            Word count goal:
-            <input id="goal" type="number" min="1" name="goal" onChange={this.handleChange} value={this.state.goal}/>
-          </label>
-          <input type="submit"/>
-        </form>
+        <h4>Create your novel:</h4>
+        <Form onSubmit={this.handleSubmit}>
+          <FormGroup row>
+            <Label for="title" sm={2}>Title:</Label>
+            <Col sm={10}>
+              <Input type="text" name="title" id="title" placeholder="novel title" onChange={this.handleChange} value={this.state.title}/>
+            </Col>
+          </FormGroup>
+          <FormGroup row>
+            <Label for="summary" sm={2}>Summary:</Label>
+            <Col sm={10}>
+              <Input type="textarea" name="summary" id="summary" onChange={this.handleChange} value={this.state.summary}/>
+            </Col>
+          </FormGroup>
+          <FormGroup row>
+            <Label for="plan" sm={2}>Plan:</Label>
+            <Col sm={10}>
+              <Input type="select" id="plan" name="plan" onChange={this.handleChange} value={this.state.plan}>
+                <option value="">--Please choose a plan--</option>
+                {this.planTypes().map(planType => {
+                  //make new Option for each planType
+                  return <option key={planType} value={planType}>{planType}</option>
+                })}
+              </Input>
+            </Col>
+          </FormGroup>
+          <FormGroup row>
+            <Label for="goal" sm={2}>Word count goal:</Label>
+            <Col sm={10}>
+              <Input type="number" min="1" name="goal" id="goal" onChange={this.handleChange} value={this.state.goal}/>
+            </Col>
+          </FormGroup>
+          <Button color="secondary">Submit</Button>
+        </Form>
       </div>
     );
   }
