@@ -11,7 +11,7 @@ class AllNovelsIndex extends Component {
           <CardColumns>
 
             {this.props.novels.map(novel => {
-              return <Col><NovelCard key={novel.id} novel={novel} currentUser={this.props.currentUser}/></Col>
+              return <NovelCard key={novel.id} novel={novel} currentUser={this.props.currentUser}/>
             })}
           </CardColumns>
       </div>
