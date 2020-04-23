@@ -32,6 +32,7 @@ class HomePage extends Component {
             <Route exact path="/about">{loggedIn ? <AboutPage /> : <Redirect to="/"/>}</Route>
             {/* Eventually change this to username, if they're current_user? */}
             <Route path="/novel">{loggedIn ? <NovelPage/> : <Redirect to="/"/>}</Route>
+            <Route path="/previous_novels">{loggedIn ? <PreviousNovelsPage/> : <Redirect to="/"/>}</Route>
             <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <LoginOrSignup/>} />
           </Switch>
         </div>
