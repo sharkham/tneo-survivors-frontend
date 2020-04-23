@@ -1,13 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import NovelCard from './NovelCard';
 
 class AllNovelsIndex extends Component {
   render() {
     return (
       <div>
-        Will display everyone else's novels
+        {this.props.novels.map(novel => {
+          <NovelCard novel={novel}/>
+        })}
       </div>
     );
   }
 }
 
-export default AllNovelsIndex;
+const mapStateToProps = state => {
+  return {
+    novels: state.allCurrentNovels
+  }
+}
+
+export default connect(mapStateToProps)(AllNovelsIndex);
