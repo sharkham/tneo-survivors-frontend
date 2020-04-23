@@ -8,7 +8,8 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink
+  NavLink,
+  NavbarText
 } from 'reactstrap';
 
 
@@ -26,15 +27,16 @@ class NavBar extends Component {
         <Nav className="mr-auto" navbar>
           { this.props.currentUser ? <NavItem><NavLink tag={Link} to="/about">About</NavLink></NavItem> : "" }
           { this.props.currentUser ? <NavItem><NavLink tag={Link} to="/novel">Novel</NavLink></NavItem> : "" }
+          { this.props.currentUser ? <NavItem><NavLink tag={Link} to="/previous_novels">Previous Novels</NavLink></NavItem> : "" }
         </Nav>
+
+        { this.props.currentUser ? <NavbarText>Welcome, {this.props.currentUser.name}!</NavbarText> : "" }
+        { this.props.currentUser ? <NavbarText><Logout /></NavbarText> : ""}
         {/* <ul> */}
-          {/* { this.props.currentUser ? <li>Welcome, {this.props.currentUser.name}</li> : "" } */}
           {/* <li><Link to="/">Home</Link></li> */}
           {/* { this.props.currentUser ? <li><Link to="/about">About</Link></li> : ""} */}
-          {/* { this.props.currentUser ? <li><Link to="/previous_novels">Previous Novels </Link></li> : ""} */}
           {/* Add previous novels page here later */}
           {/* <li><Link to="/profile">Profile</Link></li> */}
-          {/* { this.props.currentUser ? <li><Logout /></li> : ""} */}
         {/* </ul> */}
       </Navbar>
     );
