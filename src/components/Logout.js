@@ -1,12 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { logout } from '../actions/currentUser'
+import { logout } from '../actions/currentUser';
+import { Button } from 'reactstrap';
 
 
 const Logout = ({ logout }) => {
   return (
     <form onSubmit={logout}>
-      <input type="submit" value="Log Out"/>
+      <Button color="secondary" size="sm">Log Out</Button>
     </form>
   )
 }
