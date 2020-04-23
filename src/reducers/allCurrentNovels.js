@@ -18,6 +18,8 @@ export default function allCurrentNovels(state = [], action) {
       })
     case 'SET_OTHER_NOVELS':
       return [...state, ...action.novels]
+    case 'CLEAR_CURRENT_USER':
+      return []
     default:
       return state
   }
