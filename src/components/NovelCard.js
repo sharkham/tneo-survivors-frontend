@@ -1,14 +1,17 @@
 import React from 'react';
-import SmallBadgesContainer from './SmallBadgesContainer'
+import SmallBadgesContainer from './SmallBadgesContainer';
+import { Card, CardHeader, CardText, CardTitle, CardBody } from 'reactstrap';
 
 const NovelCard = ({ novel, currentUser }) => {
   return (
-    <div>
-      <p>{novel.title}</p>
-      {novel.user.name !== currentUser.name ? <p>by {novel.user.name}</p> : ""}
-      <p>{novel.summary}</p>
-      <SmallBadgesContainer badges={novel.badges} />
-    </div>
+    <Card>
+      <CardHeader>{novel.title}</CardHeader>
+      <CardBody>
+        {novel.user.name !== currentUser.name ? <CardTitle>by {novel.user.name}</CardTitle> : ""}
+        <CardText>{novel.summary}</CardText>
+        <SmallBadgesContainer badges={novel.badges} />
+      </CardBody>
+    </Card>
   );
 }
 
