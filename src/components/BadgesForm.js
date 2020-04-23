@@ -11,20 +11,33 @@ class BadgesForm extends Component {
     this.setState({
       [name]: parseInt(value)
     })
-    console.log(this.state)
   }
 
   getBadgetypeById = (id) => {
     return this.props.badgetypes.find(badgetype => badgetype.id === id)
   }
 
+  checkIfExists = (badgetype_id) => {
+    //iterate over this.props.novel.badges to see if they include one where badgetype_id === id
+    const existingBadgetype = this.props.novel.badges.find(badge => badge.badgetype_id === badgetype_id)
+    return !!existingBadgetype
+  }
+
   handleSubmit = (event) => {
     event.preventDefault()
-    const badge = this.getBadgetypeById(this.state.badgetypeId)
-    this.props.createBadge(badge, this.props.novel)
-    this.setState({
-      badgetypeId: ""
-    })
+    const exists = this.checkIfExists(this.state.badgetypeId)
+    if (exists === false) {
+      const badge = this.getBadgetypeById(this.state.badgetypeId)
+      this.props.createBadge(badge, this.props.novel)
+      this.setState({
+        badgetypeId: ""
+      })
+    } else {
+      alert("You have already earned that badge for this novel!")
+      this.setState({
+        badgetypeId: ""
+      })
+    }
   }
 
   render() {
