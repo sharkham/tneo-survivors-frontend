@@ -1,5 +1,7 @@
 export default function allCurrentNovels(state = [], action) {
   switch (action.type) {
+    case 'ADD_NOVEL':
+      return [...state, action.novel]
     case 'UPDATE_NOVEL':
       return state.map(novel => {
         if (novel.id === action.novelId) {
