@@ -5,6 +5,7 @@ import EditNovel from './EditNovel';
 import NovelBadgesContainer from './NovelBadgesContainer';
 import { connect } from 'react-redux';
 import { Route, Switch, Redirect } from "react-router-dom";
+import { Col, Row, Container } from 'reactstrap';
 
 class NovelPage extends Component {
 
@@ -12,12 +13,16 @@ class NovelPage extends Component {
     const hasNovel = this.props.hasNovel
     return (
       <div>
-        <Switch>
-          <Route path="/novel/edit">{hasNovel ? <div><EditNovel novel={this.props.novel}/><NovelBadgesContainer/></div> : <Redirect to="/novel/create"/>}</Route>
-          <Route path="/novel/create">{hasNovel ? <Redirect to="/novel"/> : <CreateNovel/>}</Route>
+        <Container>
+          <Row xs="2">
+            <Switch>
+              <Route path="/novel/edit">{hasNovel ? <div><Col><EditNovel novel={this.props.novel}/></Col><Col><NovelBadgesContainer/></Col></div> : <Redirect to="/novel/create"/>}</Route>
+              <Route path="/novel/create">{hasNovel ? <Redirect to="/novel"/> : <Col><CreateNovel/></Col>}</Route>
 
-          <Route path="/novel">{hasNovel ? <div><NovelInfo/><NovelBadgesContainer/></div> : <Redirect to="/novel/create"/>}</Route>
-        </Switch>
+              <Route path="/novel">{hasNovel ? <div><Col><NovelInfo/></Col><Col><NovelBadgesContainer/></Col></div> : <Redirect to="/novel/create"/>}</Route>
+            </Switch>
+          </Row>
+        </Container>
       </div>
     );
   }
