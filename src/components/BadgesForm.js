@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
+import { Button, Form, Input } from 'reactstrap';
 
 class BadgesForm extends Component {
   //render the badges in the form from badgetype props passed down
@@ -43,17 +43,16 @@ class BadgesForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <select onChange={this.handleChange} name="badgetypeId" className="badgeselect" value={this.state.badgetypeId}>
+      <Form inline onSubmit={this.handleSubmit}>
+        <Input type="select" onChange={this.handleChange} name="badgetypeId" className="badgeselect" value={this.state.badgetypeId}>
           <option value="">--Please choose a badge--</option>
           {this.props.badgetypes.map(badgetype => {
             //make new Option for each badgetype
             return <option key={badgetype.id} value={badgetype.id}>{badgetype.emoji} - {badgetype.name} - {badgetype.description}</option>
           })}
-        </select>
-        <Button color="secondary" size="sm">Submit</Button>
-        {/* <input type="submit"/> */}
-      </form>
+        </Input>
+        <Button color="secondary">Submit</Button>
+      </Form>
     );
   }
 }
