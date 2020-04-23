@@ -138,8 +138,8 @@ export const getNovels = user => {
       if (!!findOtherUserNovels(novels, user)) {
         dispatch(setOtherUserNovels(findOtherUserNovels(novels, user)))
       }
-      if (!!findOtherCurrentNovels(novels, user)) {
-        dispatch(setOtherNovels(findOtherCurrentNovels(novels, user)))
+      if (!!findAllCurrentNovels(novels, user)) {
+        dispatch(setOtherNovels(findAllCurrentNovels(novels, user)))
       }
     })
     .catch(console.log)
@@ -161,9 +161,9 @@ const findOtherUserNovels = (novels, user) => {
   }
 }
 
-const findOtherCurrentNovels = (novels, user) => {
+const findAllCurrentNovels = (novels, user) => {
   const currentYear = new Date().getFullYear()
-  if (!!novels.find(novel => novel.year === currentYear && novel.user_id !== user.id)) {
-    return novels.filter(novel => novel.year === currentYear && novel.user_id !== user.id)
+  if (!!novels.find(novel => novel.year === currentYear)) {
+    return novels.filter(novel => novel.year === currentYear)
   }
 }
