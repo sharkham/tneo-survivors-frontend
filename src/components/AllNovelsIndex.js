@@ -7,7 +7,7 @@ class AllNovelsIndex extends Component {
     return (
       <div>
         {this.props.novels.map(novel => {
-          <NovelCard novel={novel}/>
+          return <NovelCard key={novel.id} novel={novel}/>
         })}
       </div>
     );
