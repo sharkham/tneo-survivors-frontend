@@ -3,7 +3,7 @@ import React from 'react';
 const NovelCard = ({ novel }) => {
   return (
     <div>
-      {novel.title} - {novel.summary}
+      {novel.title}, by {novel.user.name}. "{novel.summary}"
     </div>
   );
 }
