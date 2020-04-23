@@ -13,6 +13,7 @@ import LoginOrSignup from './LoginOrSignup';
 import AboutPage from './AboutPage';
 import PreviousNovelsPage from './PreviousNovelsPage';
 import { connect } from 'react-redux';
+import { Container } from 'reactstrap';
 // import { getCurrentUser } from '../actions/currentUser'
 // import { getNovel } from './actions/currentNovel'
 
@@ -26,16 +27,19 @@ class HomePage extends Component {
           {/* This will eventually lead to the view page */}
           {/* Should there be a main page here instead that has the routes to things?
           Would take conditional rendering out of HomePage class */}
-          <Switch>
+          <Container className="themed-container" fluid="sm">
 
-            <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
-            <Route exact path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
-            <Route exact path="/about">{loggedIn ? <AboutPage /> : <Redirect to="/"/>}</Route>
-            {/* Eventually change this to username, if they're current_user? */}
-            <Route path="/novel">{loggedIn ? <NovelPage/> : <Redirect to="/"/>}</Route>
-            <Route path="/previous_novels">{loggedIn ? <PreviousNovelsPage/> : <Redirect to="/"/>}</Route>
-            <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <LoginOrSignup/>} />
-          </Switch>
+            <Switch>
+
+              <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
+              <Route exact path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
+              <Route exact path="/about">{loggedIn ? <AboutPage /> : <Redirect to="/"/>}</Route>
+              {/* Eventually change this to username, if they're current_user? */}
+              <Route path="/novel">{loggedIn ? <NovelPage/> : <Redirect to="/"/>}</Route>
+              <Route path="/previous_novels">{loggedIn ? <PreviousNovelsPage/> : <Redirect to="/"/>}</Route>
+              <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <LoginOrSignup/>} />
+            </Switch>
+          </Container>
         </div>
     );
   }
