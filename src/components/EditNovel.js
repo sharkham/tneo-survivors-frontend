@@ -97,7 +97,7 @@ class EditNovel extends Component {
             </Col>
           </FormGroup>
           <FormGroup row>
-            <Label for="wordcount" sm={2}>Word Count:</Label>
+            <Label for="wordcount" sm={2}>Current Word Count:</Label>
             <Col sm={10}>
               <Input type="number" min="1" name="wordcount" id="wordcount" onChange={this.handleChange} value={this.state.wordcount}/>
             </Col>
