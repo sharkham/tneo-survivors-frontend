@@ -34,7 +34,7 @@ class NavBar extends Component {
           { this.props.currentUser ? <NavItem><NavLink tag={Link} to="/novel">Novel</NavLink></NavItem> : "" }
           { this.props.currentUser ? <NavItem><NavLink tag={Link} to="/previous_novels">Previous Novels</NavLink></NavItem> : "" }
         </Nav>
-        { this.props.currentUser ? <NavbarText>Welcome, {this.props.currentUser.name}!</NavbarText> : "" }
+        { this.props.currentUser ? <NavbarText><strong>Welcome, {this.props.currentUser.name}!</strong></NavbarText> : "" }
         { this.props.currentUser ? <NavbarText><Logout /></NavbarText> : ""}
       </Navbar>
     );
