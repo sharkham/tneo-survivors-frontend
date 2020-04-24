@@ -4,7 +4,8 @@ import CreateNovel from './CreateNovel'
 import { connect } from 'react-redux';
 import { patchWordCount } from '../actions/novels';
 import { Link } from 'react-router-dom';
-import { Card, CardHeader, CardBody, CardText } from 'reactstrap';
+import { Card, CardHeader, CardBody, CardText, Progress, FormText } from 'reactstrap';
+import { progressbar } from '../helpers/progressbar'
 
 
 
@@ -15,7 +16,11 @@ class NovelInfo extends Component {
     return (
       <div>
         <Card>
-          <CardHeader>Title: {this.props.novel.title}</CardHeader>
+          <CardHeader>
+            {this.props.novel.title}
+            <Progress value={progressbar(this.props.novel.wordcount, this.props.novel.goal)}/>
+            <FormText>({this.props.novel.wordcount} / {this.props.novel.goal})</FormText>
+          </CardHeader>
           <CardBody>
             <CardText>Summary: {this.props.novel.summary}</CardText>
             <CardText>Plan of Attack: {this.props.novel.plan}</CardText>
