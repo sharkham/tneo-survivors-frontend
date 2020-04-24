@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Form, Label, Input, FormGroup, Button, FormText } from 'reactstrap';
 
 class UpdateWordCountForm extends Component {
   state = {
@@ -46,11 +47,14 @@ class UpdateWordCountForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>Update Word Count (please enter the number of words you wish to add):</label>
-        <input id="addedWords" type="number" min="1" name="addedWords" onChange={this.handleChange} value={this.state.addedWords}/>
-        <input type="submit"/>
-      </form>
+      <Form onSubmit={this.handleSubmit}>
+        <FormGroup>
+          <Label for="addedWords">Update Word Count: </Label>
+          <Input id="addedWords" type="number" min="1" name="addedWords" onChange={this.handleChange} value={this.state.addedWords}/>
+          <FormText>Please enter the number of words you wish to add.</FormText>
+          <Button color="secondary">Submit</Button>
+        </FormGroup>
+      </Form>
     );
   }
 }
