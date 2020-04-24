@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/currentUser';
+import { Form, Label, Input, Button, Card, CardHeader, CardBody } from 'reactstrap';
 
 class Login extends Component {
 
@@ -29,11 +30,18 @@ class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input onChange={this.handleChange} name="username" placeholder="username" type="text" value={this.state.username}/>
-        <input onChange={this.handleChange} name="password" placeholder="password" type="password" value={this.state.password}/>
-        <input type="submit" value="Log In"/>
-    </form>
+      <Card>
+        <CardHeader>Log In:</CardHeader>
+        <CardBody>
+          <Form inline onSubmit={this.handleSubmit}>
+            {/* <Label for="loginusername">Username:</Label> */}
+            <Input id="loginusername" onChange={this.handleChange} name="username" placeholder="username" type="text" value={this.state.username}/>
+            {/* <Label for="loginpassword">Password:</Label> */}
+            <Input id="loginpassword" onChange={this.handleChange} name="password" placeholder="password" type="password" value={this.state.password}/>
+            <Button color="secondary">Login</Button>
+          </Form>
+        </CardBody>
+      </Card>
     );
   }
 }
