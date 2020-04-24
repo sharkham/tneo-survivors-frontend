@@ -8,8 +8,8 @@ const BasicInfoDisplay = (props) => {
         <CardBody>
           <CardText>Summary: {props.novel.summary}</CardText>
           <CardText>Plan of Attack: {props.novel.plan}</CardText>
-          <CardText>Goal: {props.novel.goal}</CardText>
-          <CardText>Word Count: {props.novel.wordcount}</CardText>
+          <CardText>Word Count Goal: {props.novel.goal}</CardText>
+          <CardText>Current Word Count: {props.novel.wordcount}</CardText>
         </CardBody>
     </div>
   );
