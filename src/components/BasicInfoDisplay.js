@@ -1,13 +1,16 @@
 import React from 'react';
+import { CardHeader, CardText, CardBody } from 'reactstrap';
 
 const BasicInfoDisplay = (props) => {
   return (
     <div>
-        <p>Title: {props.novel.title}</p>
-        <p>Summary: {props.novel.summary}</p>
-        <p>Plan of Attack: {props.novel.plan}</p>
-        <p>Goal: {props.novel.goal}</p>
-        <p>Word Count: {props.novel.wordcount}</p>
+        <CardHeader>Title: {props.novel.title}</CardHeader>
+        <CardBody>
+          <CardText>Summary: {props.novel.summary}</CardText>
+          <CardText>Plan of Attack: {props.novel.plan}</CardText>
+          <CardText>Goal: {props.novel.goal}</CardText>
+          <CardText>Word Count: {props.novel.wordcount}</CardText>
+        </CardBody>
     </div>
   );
 }
