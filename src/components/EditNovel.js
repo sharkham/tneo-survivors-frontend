@@ -12,7 +12,8 @@ class EditNovel extends Component {
     title: this.props.novel.title,
     summary: this.props.novel.summary,
     plan: this.props.novel.plan,
-    goal: this.props.novel.goal
+    goal: this.props.novel.goal,
+    wordcount: this.props.novel.wordcount
   }
 
   planTypes = () => {
@@ -77,7 +78,7 @@ class EditNovel extends Component {
             </Col>
           </FormGroup>
           <FormGroup row>
-            <Label for="plan" sm={2}>Plan:</Label>
+            <Label for="plan" sm={2}>Plan of Attack:</Label>
             <Col sm={10}>
               <Input type="select" id="plan" name="plan" onChange={this.handleChange} value={this.state.plan}>
                 <option value="">--Please choose a plan--</option>
@@ -89,9 +90,15 @@ class EditNovel extends Component {
             </Col>
           </FormGroup>
           <FormGroup row>
-            <Label for="goal" sm={2}>Word count goal:</Label>
+            <Label for="goal" sm={2}>Word Count Goal:</Label>
             <Col sm={10}>
               <Input type="number" min="1" name="goal" id="goal" onChange={this.handleChange} value={this.state.goal}/>
+            </Col>
+          </FormGroup>
+          <FormGroup row>
+            <Label for="wordcount" sm={2}>Word Count:</Label>
+            <Col sm={10}>
+              <Input type="number" min="1" name="wordcount" id="wordcount" onChange={this.handleChange} value={this.state.wordcount}/>
             </Col>
           </FormGroup>
           <Button color="secondary">Submit</Button>

@@ -70,7 +70,7 @@ class CreateNovel extends Component {
             </Col>
           </FormGroup>
           <FormGroup row>
-            <Label for="plan" sm={2}>Plan:</Label>
+            <Label for="plan" sm={2}>Plan of Attack:</Label>
             <Col sm={10}>
               <Input type="select" id="plan" name="plan" onChange={this.handleChange} value={this.state.plan}>
                 <option value="">--Please choose a plan--</option>
@@ -82,7 +82,7 @@ class CreateNovel extends Component {
             </Col>
           </FormGroup>
           <FormGroup row>
-            <Label for="goal" sm={2}>Word count goal:</Label>
+            <Label for="goal" sm={2}>Word Count Goal:</Label>
             <Col sm={10}>
               <Input type="number" min="1" name="goal" id="goal" onChange={this.handleChange} value={this.state.goal}/>
             </Col>
