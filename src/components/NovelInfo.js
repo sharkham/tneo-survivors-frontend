@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import UpdateWordCountForm from './UpdateWordCountForm';
 import CreateNovel from './CreateNovel'
 import { connect } from 'react-redux';
 import { patchWordCount } from '../actions/novels';
@@ -26,7 +25,6 @@ class NovelInfo extends Component {
             <CardText>Plan of Attack: {this.props.novel.plan}</CardText>
             <CardText>Word Count Goal: {this.props.novel.goal}</CardText>
             <CardText>Current Word Count: {this.props.novel.wordcount}</CardText>
-
           </CardBody>
         </Card>
       </div>
