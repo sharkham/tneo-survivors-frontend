@@ -1,11 +1,15 @@
 import React from 'react';
 import SmallBadgesContainer from './SmallBadgesContainer';
-import { Card, CardHeader, CardText, CardTitle, CardBody, Progress } from 'reactstrap';
+import { Card, CardHeader, CardText, CardTitle, CardBody, Progress, FormText } from 'reactstrap';
+import { progressbar } from '../helpers/progressbar'
 
 const NovelCard = ({ novel, currentUser, container }) => {
   return (
     <Card>
-      <CardHeader>{novel.title} <Progress value={(novel.wordcount / novel.goal)}/></CardHeader>
+      <CardHeader>{novel.title}
+        <Progress value={progressbar(novel.wordcount, novel.goal)}/>
+        <FormText>({novel.wordcount} / {novel.goal})</FormText>
+      </CardHeader>
       <CardBody>
         {container !== "PreviousNovelsPage" ? <CardTitle>by {novel.user.name}</CardTitle> : ""}
         {/* <CardText>{novel.summary}</CardText> */}
