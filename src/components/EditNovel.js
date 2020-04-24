@@ -12,8 +12,7 @@ import {
   Label,
   Card,
   CardHeader,
-  CardBody,
-  CardText } from 'reactstrap';
+  CardBody} from 'reactstrap';
 
 
 
