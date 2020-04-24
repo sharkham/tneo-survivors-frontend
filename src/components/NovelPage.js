@@ -27,6 +27,7 @@ class NovelPage extends Component {
                       <Col>
                         <EditNovel novel={this.props.novel}/>
                       </Col>
+                      <br/>
                       <Col>
                         <NovelBadgesContainer/>
                       </Col>
@@ -46,15 +47,13 @@ class NovelPage extends Component {
                   <div>
                     <Col>
                       <NovelInfo/>
-                    </Col>
-                    <Col>
+                      <br/>
                       <UpdateWordCountForm
                         novel={this.props.novel}
                         wordcount={this.props.novel.wordcount}
                         patchWordCount={this.props.patchWordCount}
                         />
-                    </Col>
-                    <Col>
+                      <br/>
                       <NovelBadgesContainer/>
                     </Col>
                   </div>
