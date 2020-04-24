@@ -33,7 +33,7 @@ class NovelPage extends Component {
                       </Col>
 
                   </div>
-                  : <Redirect to="/novel/create"/>
+                  : <Redirect to="/novel/new"/>
                 }
               </Route>
               <Route path="/novel/new">
@@ -57,7 +57,7 @@ class NovelPage extends Component {
                       <NovelBadgesContainer/>
                     </Col>
                   </div>
-                  : <Redirect to="/novel/create"/>
+                  : <Redirect to="/novel/new"/>
                 }
               </Route>
             </Switch>
