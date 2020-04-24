@@ -13,10 +13,10 @@ const NovelCard = ({ novel, currentUser, container }) => {
       <CardBody>
         {container !== "PreviousNovelsPage" ? <CardTitle>by {novel.user.name}</CardTitle> : ""}
         {/* <CardText>{novel.summary}</CardText> */}
-        {container === "PreviousNovelsPage" ? <CardTitle>Summary: {novel.summary}</CardTitle> : ""}
-        <CardTitle>Plan of Attack: {novel.plan}</CardTitle>
-        {container === "PreviousNovelsPage" ? <CardTitle>Goal: {novel.goal}</CardTitle> : ""}
-        {container === "PreviousNovelsPage" ? <CardTitle>Final Word Count: {novel.wordcount}</CardTitle> : ""}
+        {container === "PreviousNovelsPage" ? <CardText>Summary: {novel.summary}</CardText> : ""}
+        <CardText>Plan of Attack: {novel.plan}</CardText>
+        {container === "PreviousNovelsPage" ? <CardText>Goal: {novel.goal}</CardText> : ""}
+        {container === "PreviousNovelsPage" ? <CardText>Final Word Count: {novel.wordcount}</CardText> : ""}
         <SmallBadgesContainer badges={novel.badges} />
       </CardBody>
     </Card>
