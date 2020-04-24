@@ -8,7 +8,7 @@ const NovelCard = ({ novel, currentUser, container }) => {
     <Card>
       <CardHeader>
         {novel.title}
-  {container === "PreviousNovelsPage" ? <> ({novel.year})</> : ""}
+        {container === "PreviousNovelsPage" ? <> ({novel.year})</> : ""}
         <Progress value={progressbar(novel.wordcount, novel.goal)}/>
         <FormText>({novel.wordcount} / {novel.goal})</FormText>
       </CardHeader>
