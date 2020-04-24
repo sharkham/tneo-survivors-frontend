@@ -36,7 +36,7 @@ class NovelPage extends Component {
                   : <Redirect to="/novel/create"/>
                 }
               </Route>
-              <Route path="/novel/create">
+              <Route path="/novel/new">
                 {hasNovel ?
                   <Redirect to="/novel"/>
                   : <Col><CreateNovel/></Col>
