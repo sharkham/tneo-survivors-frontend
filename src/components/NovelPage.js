@@ -17,16 +17,20 @@ class NovelPage extends Component {
       <div>
 
 
-        {/* <Container> */}
-          {/* <Row> */}
+        <Container>
+          <Row>
             <Switch>
               <Route path="/novel/edit">
                 {hasNovel ?
                   <div>
-                    <CardColumns>
-                      <EditNovel novel={this.props.novel}/>
-                    </CardColumns>
-                    <NovelBadgesContainer/>
+
+                      <Col>
+                        <EditNovel novel={this.props.novel}/>
+                      </Col>
+                      <Col>
+                        <NovelBadgesContainer/>
+                      </Col>
+
                   </div>
                   : <Redirect to="/novel/create"/>
                 }
@@ -40,22 +44,26 @@ class NovelPage extends Component {
               <Route path="/novel">
                 {hasNovel ?
                   <div>
-                    <CardColumns>
+                    <Col>
                       <NovelInfo/>
+                    </Col>
+                    <Col>
                       <UpdateWordCountForm
                         novel={this.props.novel}
                         wordcount={this.props.novel.wordcount}
                         patchWordCount={this.props.patchWordCount}
-                      />
-                    </CardColumns>
-                    <NovelBadgesContainer/>
+                        />
+                    </Col>
+                    <Col>
+                      <NovelBadgesContainer/>
+                    </Col>
                   </div>
                   : <Redirect to="/novel/create"/>
                 }
               </Route>
             </Switch>
-          {/* </Row> */}
-        {/* </Container> */}
+          </Row>
+        </Container>
 
       </div>
     );

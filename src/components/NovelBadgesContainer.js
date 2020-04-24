@@ -10,7 +10,7 @@ class NovelBadgesContainer extends Component {
 
   render() {
     return (
-      <Card style={{ width: '45rem' }}>
+      <Card>
         <CardHeader>
           <BadgesForm badgetypes={this.props.badgetypes} novel={this.props.novel} createBadge={this.props.createBadge}/>
         </CardHeader>
