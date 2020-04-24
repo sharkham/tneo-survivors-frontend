@@ -42,7 +42,8 @@ class EditNovel extends Component {
       title: this.state.title,
       summary: this.state.summary,
       plan: this.state.plan,
-      goal: parseInt(this.state.goal)
+      goal: parseInt(this.state.goal),
+      wordcount: parseInt(this.state.wordcount)
     }
     this.props.patchNovel(novel)
     this.props.history.push("/novel")
