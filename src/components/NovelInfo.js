@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import CreateNovel from './CreateNovel'
 import { connect } from 'react-redux';
-import { patchWordCount } from '../actions/novels';
 import { Link } from 'react-router-dom';
 import { Card, CardHeader, CardBody, CardText, Progress, FormText } from 'reactstrap';
 import { progressbar } from '../helpers/progressbar'
@@ -39,11 +38,4 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    // getNovel: user => dispatch(getNovel(user)),
-    patchWordCount: novel => dispatch(patchWordCount(novel))
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(NovelInfo);
+export default connect(mapStateToProps)(NovelInfo);

@@ -4,6 +4,7 @@ import CreateNovel from './CreateNovel';
 import EditNovel from './EditNovel';
 import NovelBadgesContainer from './NovelBadgesContainer';
 import UpdateWordCountForm from './UpdateWordCountForm';
+import { patchWordCount } from '../actions/novels';
 import { connect } from 'react-redux';
 import { Route, Switch, Redirect } from "react-router-dom";
 import { Col, Row, Container } from 'reactstrap';
@@ -71,6 +72,12 @@ const mapStateToProps = state => {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    // getNovel: user => dispatch(getNovel(user)),
+    patchWordCount: novel => dispatch(patchWordCount(novel))
+  }
+}
 
 
-export default connect(mapStateToProps)(NovelPage);
+export default connect(mapStateToProps, mapDispatchToProps)(NovelPage);
