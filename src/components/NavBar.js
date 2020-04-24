@@ -25,6 +25,11 @@ class NavBar extends Component {
       <Navbar color="light" light expand="md">
         <NavbarBrand tag={Link} to="/">Novel Contest App</NavbarBrand>
         <Nav className="mr-auto" navbar>
+          {/* For not logged in users: */}
+          { !this.props.currentUser ? <NavItem><NavLink tag={Link} to="/login">Log In</NavLink></NavItem> : "" }
+          { !this.props.currentUser ? <NavItem><NavLink tag={Link} to="/signup">Sign Up</NavLink></NavItem> : "" }
+
+          {/* For logged in users:          */}
           { this.props.currentUser ? <NavItem><NavLink tag={Link} to="/about">About</NavLink></NavItem> : "" }
           { this.props.currentUser ? <NavItem><NavLink tag={Link} to="/novel">Novel</NavLink></NavItem> : "" }
           { this.props.currentUser ? <NavItem><NavLink tag={Link} to="/previous_novels">Previous Novels</NavLink></NavItem> : "" }
