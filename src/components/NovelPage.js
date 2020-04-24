@@ -16,10 +16,15 @@ class NovelPage extends Component {
         <Container>
           <Row>
             <Switch>
-              <Route path="/novel/edit">{hasNovel ? <div><Col><EditNovel novel={this.props.novel}/></Col><Col><NovelBadgesContainer/></Col></div> : <Redirect to="/novel/create"/>}</Route>
-              <Route path="/novel/create">{hasNovel ? <Redirect to="/novel"/> : <Col><CreateNovel/></Col>}</Route>
-
-              <Route path="/novel">{hasNovel ? <div><Col><NovelInfo/></Col><Col><NovelBadgesContainer/></Col></div> : <Redirect to="/novel/create"/>}</Route>
+              <Route path="/novel/edit">
+                {hasNovel ? <div><Col><EditNovel novel={this.props.novel}/></Col><Col><NovelBadgesContainer/></Col></div> : <Redirect to="/novel/create"/>}
+              </Route>
+              <Route path="/novel/create">
+                {hasNovel ? <Redirect to="/novel"/> : <Col><CreateNovel/></Col>}
+              </Route>
+              <Route path="/novel">
+                {hasNovel ? <div><Col><NovelInfo/></Col><Col><NovelBadgesContainer/></Col></div> : <Redirect to="/novel/create"/>}
+              </Route>
             </Switch>
           </Row>
         </Container>
