@@ -6,7 +6,9 @@ import { progressbar } from '../helpers/progressbar'
 const NovelCard = ({ novel, currentUser, container }) => {
   return (
     <Card>
-      <CardHeader>{novel.title}
+      <CardHeader>
+        {novel.title}
+  {container === "PreviousNovelsPage" ? <> ({novel.year})</> : ""}
         <Progress value={progressbar(novel.wordcount, novel.goal)}/>
         <FormText>({novel.wordcount} / {novel.goal})</FormText>
       </CardHeader>
