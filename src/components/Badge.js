@@ -1,9 +1,10 @@
 import React from 'react';
+import { Button } from 'reactstrap';
 
 const Badge = ({ badge, destroyBadge }) => {
   return (
     <div>
-      {badge.emoji} - {badge.name} - {badge.description} <button onClick={() => destroyBadge(badge.id)}>Delete</button>
+      {badge.emoji} - {badge.name} - {badge.description} <Button size="sm" color="secondary" onClick={() => destroyBadge(badge.id)}>x</Button>
     </div>
   );
 }
