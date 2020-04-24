@@ -4,13 +4,14 @@ export default function allCurrentNovels(state = [], action) {
       return [...state, action.novel]
     case 'UPDATE_NOVEL':
       return state.map(novel => {
-        if (novel.id === action.novelId) {
+        if (novel.id === action.novel.id) {
           return {
             ...novel,
-            title: action.payload.title,
-            summary: action.payload.summary,
-            plan: action.payload.plan,
-            goal: action.payload.goal
+            title: action.novel.title,
+            summary: action.novel.summary,
+            plan: action.novel.plan,
+            goal: action.novel.goal,
+            wordcount: action.novel.wordcount
           };
         } else {
           return novel;
@@ -33,6 +34,17 @@ export default function allCurrentNovels(state = [], action) {
           return {
             ...novel,
             badges: novel.badges.filter(badge => badge.id !== action.badgeId)
+          };
+        } else {
+          return novel;
+        }
+      })
+    case 'UPDATE_CURRENT_NOVEL_WORDCOUNT':
+      return state.map(novel => {
+        if (novel.id === action.novel.id) {
+          return {
+            ...novel,
+            wordcount: action.novel.wordcount
           };
         } else {
           return novel;
