@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { signup } from '../actions/currentUser';
+import { Form, Label, Input, Button, Card, CardHeader, CardBody, FormText } from 'reactstrap';
+
 
 class Signup extends Component {
 
@@ -31,12 +33,23 @@ class Signup extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <input onChange={this.handleChange} name="username" placeholder="username" type="text" value={this.state.username}/>
-        <input onChange={this.handleChange} name="name" placeholder="name" type="text" value={this.state.name}/>
-        <input onChange={this.handleChange} name="password" placeholder="password" type="password" value={this.state.password}/>
-        <input type="submit" value="Sign Up"/>
-    </form>
+      <Card>
+        <CardHeader>Sign Up:</CardHeader>
+        <CardBody>
+
+          <Form onSubmit={this.handleSubmit}>
+            <Label for="username">Username:</Label>
+            <Input id="username" onChange={this.handleChange} name="username" placeholder="username" type="text" value={this.state.username}/>
+            <FormText>You will use this to log in.</FormText>
+            <Label for="name">Name:</Label>
+            <Input id="name" onChange={this.handleChange} name="name" placeholder="name" type="text" value={this.state.name}/>
+            <FormText>This will be displayed to other users attached to  your novel.</FormText>
+            <Label for="password">Password:</Label>
+            <Input id="password" onChange={this.handleChange} name="password" placeholder="password" type="password" value={this.state.password}/>
+            <Button type="secondary">Sign Up</Button>
+          </Form>
+        </CardBody>
+      </Card>
     );
   }
 }
