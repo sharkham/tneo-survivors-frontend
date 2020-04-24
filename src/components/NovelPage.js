@@ -7,7 +7,7 @@ import UpdateWordCountForm from './UpdateWordCountForm';
 import { patchWordCount } from '../actions/novels';
 import { connect } from 'react-redux';
 import { Route, Switch, Redirect } from "react-router-dom";
-import { Col, Row, Container } from 'reactstrap';
+import { Col, Row, Container, CardColumns } from 'reactstrap';
 
 class NovelPage extends Component {
 
@@ -15,18 +15,18 @@ class NovelPage extends Component {
     const hasNovel = this.props.hasNovel
     return (
       <div>
-        <Container>
-          <Row>
+
+
+        {/* <Container> */}
+          {/* <Row> */}
             <Switch>
               <Route path="/novel/edit">
                 {hasNovel ?
                   <div>
-                    <Col>
+                    <CardColumns>
                       <EditNovel novel={this.props.novel}/>
-                    </Col>
-                    <Col>
-                      <NovelBadgesContainer/>
-                    </Col>
+                    </CardColumns>
+                    <NovelBadgesContainer/>
                   </div>
                   : <Redirect to="/novel/create"/>
                 }
@@ -40,26 +40,23 @@ class NovelPage extends Component {
               <Route path="/novel">
                 {hasNovel ?
                   <div>
-                    <Col>
+                    <CardColumns>
                       <NovelInfo/>
-                    </Col>
-                    <Col>
                       <UpdateWordCountForm
                         novel={this.props.novel}
                         wordcount={this.props.novel.wordcount}
                         patchWordCount={this.props.patchWordCount}
                       />
-                    </Col>
-                    <Col>
-                      <NovelBadgesContainer/>
-                    </Col>
+                    </CardColumns>
+                    <NovelBadgesContainer/>
                   </div>
                   : <Redirect to="/novel/create"/>
                 }
               </Route>
             </Switch>
-          </Row>
-        </Container>
+          {/* </Row> */}
+        {/* </Container> */}
+
       </div>
     );
   }
