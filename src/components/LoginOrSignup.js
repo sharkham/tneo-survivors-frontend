@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const LoginOrSignup = () => {
   return (
     <div>
-      <h4>Welcome, please <Link to="/signup">sign up</Link> or <Link to="/login">log in</Link>.</h4>
+      <p>Welcome, please <Link to="/signup">sign up</Link> or <Link to="/login">log in</Link>.</p>
     </div>
   );
 }
