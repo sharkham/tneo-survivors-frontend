@@ -17,7 +17,7 @@ class NovelInfo extends Component {
       <div>
         <Card>
           <CardHeader>
-            {this.props.novel.title}
+            {this.props.novel.title} - <Link to="/novel/edit">Edit Novel</Link>
             <Progress value={progressbar(this.props.novel.wordcount, this.props.novel.goal)}/>
             <FormText>({this.props.novel.wordcount} / {this.props.novel.goal})</FormText>
           </CardHeader>
@@ -26,7 +26,6 @@ class NovelInfo extends Component {
             <CardText>Plan of Attack: {this.props.novel.plan}</CardText>
             <CardText>Word Count Goal: {this.props.novel.goal}</CardText>
             <CardText>Current Word Count: {this.props.novel.wordcount}</CardText>
-            <CardText><Link to="/novel/edit">Edit Novel</Link></CardText>
             <UpdateWordCountForm
               novel={this.props.novel}
               wordcount={this.props.novel.wordcount}
