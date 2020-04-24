@@ -27,6 +27,17 @@ export default function allCurrentNovels(state = [], action) {
           return novel;
         }
       })
+    case 'DELETE_BADGE':
+      return state.map(novel => {
+        if (novel.badges.find(badge => badge.id === action.badgeId)) {
+          return {
+            ...novel,
+            badges: novel.badges.filter(badge => badge.id !== action.badgeId)
+          };
+        } else {
+          return novel;
+        }
+      })
     case 'SET_OTHER_NOVELS':
       return [...state, ...action.novels]
     case 'CLEAR_CURRENT_USER':
