@@ -10,7 +10,7 @@ const NovelCard = ({ novel, currentUser, container }) => {
         {novel.title}
         {container === "PreviousNovelsPage" ? <> ({novel.year})</> : ""}
         <Progress value={progressbar(novel.wordcount, novel.goal)}/>
-        <FormText>({novel.wordcount} / {novel.goal})</FormText>
+        <small className="text-muted">({novel.wordcount} / {novel.goal})</small>
       </CardHeader>
       <CardBody>
         {container !== "PreviousNovelsPage" ? <CardTitle>by {novel.user.name}</CardTitle> : ""}
