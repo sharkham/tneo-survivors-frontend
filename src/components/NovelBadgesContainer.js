@@ -3,16 +3,21 @@ import Badges from './Badges';
 import BadgesForm from './BadgesForm';
 import { createBadge, destroyBadge } from '../actions/badges';
 import { connect } from 'react-redux';
+import { Card, CardHeader, CardBody } from 'reactstrap';
 
 class NovelBadgesContainer extends Component {
   //this component is going to access store to get and set info
 
   render() {
     return (
-      <div>
-        <BadgesForm badgetypes={this.props.badgetypes} novel={this.props.novel} createBadge={this.props.createBadge}/>
-        <Badges badges={this.props.badges} destroyBadge={this.props.destroyBadge}/>
-      </div>
+      <Card>
+        <CardHeader>
+          <BadgesForm badgetypes={this.props.badgetypes} novel={this.props.novel} createBadge={this.props.createBadge}/>
+        </CardHeader>
+        <CardBody>
+          <Badges badges={this.props.badges} destroyBadge={this.props.destroyBadge}/>
+        </CardBody>
+      </Card>
     );
   }
 }
