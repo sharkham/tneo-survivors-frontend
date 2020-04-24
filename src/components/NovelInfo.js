@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import CreateNovel from './CreateNovel'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Card, CardHeader, CardBody, CardText, Progress, FormText } from 'reactstrap';
+import { Card, CardHeader, CardBody, CardText, Progress } from 'reactstrap';
 import { progressbar } from '../helpers/progressbar'
 
 
@@ -17,7 +17,7 @@ class NovelInfo extends Component {
           <CardHeader>
             {this.props.novel.title} - <Link to="/novel/edit">Edit Novel</Link>
             <Progress value={progressbar(this.props.novel.wordcount, this.props.novel.goal)}/>
-            <FormText>({this.props.novel.wordcount} / {this.props.novel.goal})</FormText>
+            <small className="text-muted">({this.props.novel.wordcount} / {this.props.novel.goal})</small>
           </CardHeader>
           <CardBody>
             <CardText>Summary: {this.props.novel.summary}</CardText>
