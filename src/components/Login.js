@@ -35,9 +35,9 @@ class Login extends Component {
         <CardBody>
           <Form inline onSubmit={this.handleSubmit}>
             {/* <Label for="loginusername">Username:</Label> */}
-            <Input id="loginusername" onChange={this.handleChange} name="username" placeholder="username" type="text" value={this.state.username}/>
+            <Input required id="loginusername" onChange={this.handleChange} name="username" placeholder="username" type="text" value={this.state.username}/>
             {/* <Label for="loginpassword">Password:</Label> */}
-            <Input id="loginpassword" onChange={this.handleChange} name="password" placeholder="password" type="password" value={this.state.password}/>
+            <Input required id="loginpassword" onChange={this.handleChange} name="password" placeholder="password" type="password" value={this.state.password}/>
             <Button color="secondary">Login</Button>
           </Form>
         </CardBody>
