@@ -78,7 +78,7 @@ class EditNovel extends Component {
           <Form onSubmit={this.handleSubmit}>
             <FormGroup>
               <Label for="title">Title:</Label>
-                <Input required type="text" name="title" id="title" placeholder="novel title" onChange={this.handleChange} value={this.state.title}/>
+                <Input required type="text" name="title" id="title" onChange={this.handleChange} value={this.state.title}/>
             </FormGroup>
             <FormGroup>
               <Label for="summary">Summary:</Label>
