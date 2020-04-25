@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Form, Label, Input, FormGroup, Button, FormText, Card, CardHeader, CardBody, CardText } from 'reactstrap';
+import { connect } from 'react-redux';
 
 class UpdateWordCountForm extends Component {
   state = {
-    addedWords: 0,
-    wordCount: this.props.wordcount
+    addedWords: 0
+    // wordCount: this.props.wordcount
   }
 
   handleChange = (event) => {
@@ -29,14 +30,13 @@ class UpdateWordCountForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    const updatedWordCount = this.state.wordCount + parseInt(this.state.addedWords)
+    const updatedWordCount = this.props.wordCount + parseInt(this.state.addedWords)
     // if (typeof updatedWordCount === "number") {
       const updatedNovel = this.updateNovel(updatedWordCount)
       this.props.patchWordCount(updatedNovel)
       this.setState({
         ...this.state,
-        addedWords: 0,
-        wordCount: updatedWordCount
+        addedWords: 0
       })
     // } else {
     //   alert("Please enter a number")
@@ -68,5 +68,11 @@ class UpdateWordCountForm extends Component {
   }
 }
 
-export default UpdateWordCountForm;
+const mapStateToProps = state => {
+  return {
+    wordCount: state.currentNovel.wordcount
+  }
+}
+
+export default connect(mapStateToProps)(UpdateWordCountForm);
 
