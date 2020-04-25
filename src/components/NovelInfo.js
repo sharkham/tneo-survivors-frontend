@@ -9,6 +9,12 @@ import { progressbar } from '../helpers/progressbar'
 
 class NovelInfo extends Component {
 
+  // timeFormatter = (data) => {
+  //   const date = new Date(data)
+  //   return {
+  //     date
+  //   }
+  // }
 
   render() {
     return (
@@ -24,6 +30,7 @@ class NovelInfo extends Component {
             <CardText>Plan of Attack: {this.props.novel.plan}</CardText>
             <CardText>Word Count Goal: {this.props.novel.goal}</CardText>
             <CardText>Current Word Count: {this.props.novel.wordcount}</CardText>
+            {/* <CardText>Updated at: {this.timeFormatter(this.props.novel.updated_at)}</CardText> */}
           </CardBody>
         </Card>
       </div>
