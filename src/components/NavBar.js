@@ -23,7 +23,7 @@ class NavBar extends Component {
   render() {
     return (
       <Navbar color="light" light expand="md">
-        <NavbarBrand tag={Link} to="/">Novel Contest App</NavbarBrand>
+        <NavbarBrand tag={Link} to="/">Novel Tracker App</NavbarBrand>
         <Nav className="mr-auto" navbar>
           {/* For not logged in users: */}
           { !this.props.currentUser ? <NavItem><NavLink tag={Link} to="/login">Log In</NavLink></NavItem> : "" }
