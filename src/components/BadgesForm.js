@@ -44,7 +44,7 @@ class BadgesForm extends Component {
   render() {
     return (
       <Form inline onSubmit={this.handleSubmit}>
-        <Input type="select" onChange={this.handleChange} name="badgetypeId" className="badgeselect" value={this.state.badgetypeId}>
+        <Input required type="select" onChange={this.handleChange} name="badgetypeId" className="badgeselect" value={this.state.badgetypeId}>
           <option value="">--Please choose a badge--</option>
           {this.props.badgetypes.map(badgetype => {
             //make new Option for each badgetype
