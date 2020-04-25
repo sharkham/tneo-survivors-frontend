@@ -1,9 +1,10 @@
 import React from 'react';
 
 const SmallBadge = (props) => {
+
   return (
     <>
-      {props.badge.emoji}
+      <span style={{fontSize: 24}}>{props.badge.emoji}</span>
     </>
   );
 }
