@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Logout from './Logout';
 import { connect } from 'react-redux';
-import { getCurrentUser } from '../actions/currentUser';
 import { Link } from 'react-router-dom';
 import {
   Navbar,

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/currentUser';
-import { Form, Label, Input, Button, Card, CardHeader, CardBody } from 'reactstrap';
+import { Form, Input, Button, Card, CardHeader, CardBody } from 'reactstrap';
 
 class Login extends Component {
 

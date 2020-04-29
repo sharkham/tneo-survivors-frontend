@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createNovel } from '../actions/novels';
-import { Col,
-  Button,
+import { Button,
   Form,
   FormGroup,
   Input,

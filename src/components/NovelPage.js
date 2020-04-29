@@ -7,7 +7,7 @@ import UpdateWordCountForm from './UpdateWordCountForm';
 import { patchWordCount } from '../actions/novels';
 import { connect } from 'react-redux';
 import { Route, Switch, Redirect } from "react-router-dom";
-import { Col, Row, Container, CardColumns } from 'reactstrap';
+import { Col, Row, Container } from 'reactstrap';
 
 class NovelPage extends Component {
 

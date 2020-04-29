@@ -4,7 +4,6 @@ import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { patchNovel } from '../actions/novels';
 import {
-  Col,
   Button,
   Form,
   FormGroup,

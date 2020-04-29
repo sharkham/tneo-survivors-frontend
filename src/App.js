@@ -29,7 +29,6 @@ class App extends Component {
   }
 
   render() {
-    const loggedIn = this.props.loggedIn
     return (
       <HomePage />
         // <div>
@@ -52,8 +51,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.currentUser,
-    loggedIn: !!state.currentUser
+    currentUser: state.currentUser
   }
 }
 

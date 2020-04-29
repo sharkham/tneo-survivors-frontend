@@ -1,6 +1,6 @@
 import React from 'react';
 import SmallBadgesContainer from './SmallBadgesContainer';
-import { Card, CardHeader, CardText, CardTitle, CardBody, Progress, FormText } from 'reactstrap';
+import { Card, CardHeader, CardText, CardTitle, CardBody, Progress } from 'reactstrap';
 import { progressbar } from '../helpers/progressbar'
 
 const NovelCard = ({ novel, currentUser, container }) => {

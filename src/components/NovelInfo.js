@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CreateNovel from './CreateNovel'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Card, CardHeader, CardBody, CardText, Progress } from 'reactstrap';
