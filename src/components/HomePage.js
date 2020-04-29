@@ -11,6 +11,7 @@ import Signup from './Signup';
 import AllNovelsIndex from './AllNovelsIndex';
 import WelcomePage from './WelcomePage';
 import AboutPage from './AboutPage';
+import GuidelinesPage from './GuidelinesPage';
 import PreviousNovelsPage from './PreviousNovelsPage';
 import { connect } from 'react-redux';
 import { Container } from 'reactstrap';
@@ -34,7 +35,7 @@ class HomePage extends Component {
               <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
               <Route exact path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
               <Route exact path="/about">{loggedIn ? <AboutPage /> : <Redirect to="/"/>}</Route>
-              {/* Eventually change this to username, if they're current_user? */}
+              <Route path="/guidelines">{loggedIn ? <GuidelinesPage /> : <Redirect to="/"/>}</Route>
               <Route path="/novel">{loggedIn ? <NovelPage/> : <Redirect to="/"/>}</Route>
               <Route path="/previous_novels">{loggedIn ? <PreviousNovelsPage/> : <Redirect to="/"/>}</Route>
               <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <WelcomePage/>} />
