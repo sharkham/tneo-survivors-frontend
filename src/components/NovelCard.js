@@ -4,6 +4,7 @@ import { Card, CardHeader, CardText, CardTitle, CardBody, Progress } from 'react
 import { progressbar } from '../helpers/progressbar'
 
 const NovelCard = ({ novel, currentUser, container }) => {
+
   return (
     <Card>
       <CardHeader>
