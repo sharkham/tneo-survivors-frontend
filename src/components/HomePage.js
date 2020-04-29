@@ -9,7 +9,7 @@ import NovelPage from './NovelPage';
 import Login from './Login';
 import Signup from './Signup';
 import AllNovelsIndex from './AllNovelsIndex';
-import LoginOrSignup from './LoginOrSignup';
+import WelcomePage from './WelcomePage';
 import AboutPage from './AboutPage';
 import PreviousNovelsPage from './PreviousNovelsPage';
 import { connect } from 'react-redux';
@@ -37,7 +37,7 @@ class HomePage extends Component {
               {/* Eventually change this to username, if they're current_user? */}
               <Route path="/novel">{loggedIn ? <NovelPage/> : <Redirect to="/"/>}</Route>
               <Route path="/previous_novels">{loggedIn ? <PreviousNovelsPage/> : <Redirect to="/"/>}</Route>
-              <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <LoginOrSignup/>} />
+              <Route exact path="/" render={() => loggedIn ? <AllNovelsIndex/> : <WelcomePage/>} />
             </Switch>
           </Container>
         </div>
