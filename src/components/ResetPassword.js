@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardBody, Form, Input, Button } from 'reactstrap';
+import { resetPassword } from '../helpers/resetPassword';
 
 class ResetPassword extends Component {
 
@@ -17,6 +18,7 @@ class ResetPassword extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     //the part where wordcount gets submitted somewhere!
+    resetPassword(this.state.email)
     console.log(this.state)
     this.setState({
       email: ""
