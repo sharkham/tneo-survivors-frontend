@@ -7,7 +7,7 @@ import { Form, Label, Input, Button, Card, CardHeader, CardBody, FormText } from
 class Signup extends Component {
 
   state = {
-    username: "",
+    email: "",
     name: "",
     password: ""
   }
@@ -25,7 +25,7 @@ class Signup extends Component {
     console.log(this.state)
     this.props.signup(this.state)
     this.setState({
-      username: "",
+      email: "",
       name: "",
       password: ""
     })
@@ -38,8 +38,8 @@ class Signup extends Component {
         <CardBody>
 
           <Form onSubmit={this.handleSubmit}>
-            <Label for="username">Username:</Label>
-            <Input required id="username" onChange={this.handleChange} name="username" placeholder="username" type="text" value={this.state.username}/>
+            <Label for="email">email:</Label>
+            <Input required id="email" onChange={this.handleChange} name="email" placeholder="email" type="email" value={this.state.email}/>
             <FormText>You will use this to log in.</FormText>
             <Label for="name">Name:</Label>
             <Input required id="name" onChange={this.handleChange} name="name" placeholder="name" type="text" value={this.state.name}/>
