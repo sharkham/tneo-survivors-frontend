@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../actions/currentUser';
-import { Form, Input, Button, Card, CardHeader, CardBody } from 'reactstrap';
+import { Form, Input, Button, Card, CardHeader, CardBody, CardText } from 'reactstrap';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
 
@@ -40,6 +41,7 @@ class Login extends Component {
             <Input required id="loginpassword" onChange={this.handleChange} name="password" placeholder="password" type="password" value={this.state.password}/>
             <Button color="secondary">Login</Button>
           </Form>
+          <CardText><Link to="/reset_password">Forgot password?</Link></CardText>
         </CardBody>
       </Card>
     );
