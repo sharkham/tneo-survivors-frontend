@@ -6,7 +6,7 @@ import { Form, Input, Button, Card, CardHeader, CardBody } from 'reactstrap';
 class Login extends Component {
 
   state = {
-    username: "",
+    email: "",
     password: ""
   }
 
@@ -23,7 +23,7 @@ class Login extends Component {
     console.log(this.state)
     this.props.login(this.state)
     this.setState({
-      username: "",
+      email: "",
       password: ""
     })
   }
@@ -34,8 +34,8 @@ class Login extends Component {
         <CardHeader>Log In:</CardHeader>
         <CardBody>
           <Form inline onSubmit={this.handleSubmit}>
-            {/* <Label for="loginusername">Username:</Label> */}
-            <Input required id="loginusername" onChange={this.handleChange} name="username" placeholder="username" type="text" value={this.state.username}/>
+            {/* <Label for="loginemail">email:</Label> */}
+            <Input required id="loginemail" onChange={this.handleChange} name="email" placeholder="email" type="email" value={this.state.email}/>
             {/* <Label for="loginpassword">Password:</Label> */}
             <Input required id="loginpassword" onChange={this.handleChange} name="password" placeholder="password" type="password" value={this.state.password}/>
             <Button color="secondary">Login</Button>
