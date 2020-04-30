@@ -1,6 +1,7 @@
 const baseURL = "http://localhost:3000/api/v1"
 
 export const resetPassword = (email) => {
+  console.log("resetPassword firing!")
   return fetch(`${baseURL}/reset_password`, {
     credentials: "include",
     method: "POST",
@@ -9,9 +10,8 @@ export const resetPassword = (email) => {
     },
     body: JSON.stringify(email)
   })
-  .then(res => res.json())
-  .then(res => {
-    console.log(res)
+  .then(() => {
+    console.log("do the redirect here? Or just nothing?")
   })
   .catch(console.log)
 }
