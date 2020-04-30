@@ -4,7 +4,7 @@ class ResetPassword extends Component {
   render() {
     return (
       <div>
-
+        Send reset password link from here.
       </div>
     );
   }
