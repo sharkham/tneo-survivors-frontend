@@ -38,12 +38,12 @@ class Signup extends Component {
         <CardBody>
 
           <Form onSubmit={this.handleSubmit}>
-            <Label for="email">email:</Label>
+            <Label for="email">Email:</Label>
             <Input required id="email" onChange={this.handleChange} name="email" placeholder="email" type="email" value={this.state.email}/>
-            <FormText>You will use this to log in.</FormText>
+            <FormText>You will use this to log in and for password recovery.</FormText>
             <Label for="name">Name:</Label>
             <Input required id="name" onChange={this.handleChange} name="name" placeholder="name" type="text" value={this.state.name}/>
-            <FormText>This will be displayed to other users along with your novel.</FormText>
+            <FormText>The name you write under--this will be displayed to other users along with your novel.</FormText>
             <Label for="password">Password:</Label>
             <Input required id="password" onChange={this.handleChange} name="password" placeholder="password" type="password" value={this.state.password}/>
             <Button type="secondary">Sign Up</Button>
