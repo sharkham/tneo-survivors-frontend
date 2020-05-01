@@ -12,8 +12,7 @@ export const resetPassword = (email) => {
   })
   .then(res => res.json())
   .then(response => {
-    console.log(response)
-    alert("Email has been sent!")
+    alert(response.alert)
   })
   // .then(() => {
   //   console.log("do the redirect here? Or just nothing?")
