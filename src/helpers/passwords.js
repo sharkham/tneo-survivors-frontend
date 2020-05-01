@@ -1,8 +1,8 @@
 const baseURL = "http://localhost:3000/api/v1"
 
-export const resetPassword = (email) => {
-  console.log("resetPassword firing!")
-  return fetch(`${baseURL}/reset_password`, {
+export const forgotPassword = (email) => {
+  console.log("forgotPassword firing!")
+  return fetch(`${baseURL}/forgot_password`, {
     credentials: "include",
     method: "POST",
     headers: {
