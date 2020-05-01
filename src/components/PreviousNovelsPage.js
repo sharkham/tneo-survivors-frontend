@@ -5,11 +5,14 @@ import { CardColumns } from 'reactstrap';
 
 const PreviousNovelsPage = (props) => {
   return (
-    <CardColumns>
+    <div>
       {/* {if (props.novels)} */}
-      {props.novels.length > 0 ? props.novels.map(novel => <NovelCard key={novel.id} novel={novel} currentUser={props.currentUser} container="PreviousNovelsPage"/>) : <p>You don't have any previous novels yet!</p>}
+      {props.novels.length > 0 ?
+        <CardColumns>{props.novels.map(novel => <NovelCard key={novel.id} novel={novel} currentUser={props.currentUser} container="PreviousNovelsPage"/>)}</CardColumns>
+        :
+        <p>You don't have any previous novels yet!</p>}
       {/* Previous novels go here! */}
-    </CardColumns>
+    </div>
   );
 }
 
