@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Card, CardHeader, CardBody, Form, Input, Button } from 'reactstrap';
 import { passwords } from '../helpers/passwords';
 
-class ResetPassword extends Component {
+class ForgotPassword extends Component {
 
   state = {
     email: ""
@@ -18,7 +18,7 @@ class ResetPassword extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     //the part where wordcount gets submitted somewhere!
-    resetPassword(this.state.email)
+    forgotPassword(this.state.email)
     console.log(this.state)
     this.setState({
       email: ""
@@ -32,7 +32,7 @@ class ResetPassword extends Component {
         <CardHeader>Request password reset:</CardHeader>
         <CardBody>
           <Form inline onSubmit={this.handleSubmit}>
-            <Input required id="resetpasswordemail" onChange={this.handleChange} name="email" placeholder="email" type="email" value={this.state.email}/>
+            <Input required id="forgotpasswordemail" onChange={this.handleChange} name="email" placeholder="email" type="email" value={this.state.email}/>
             <Button color="secondary">Submit</Button>
           </Form>
         </CardBody>
@@ -41,4 +41,4 @@ class ResetPassword extends Component {
   }
 }
 
-export default ResetPassword;
+export default ForgotPassword;
