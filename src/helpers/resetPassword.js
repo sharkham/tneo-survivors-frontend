@@ -10,9 +10,13 @@ export const resetPassword = (email) => {
     },
     body: JSON.stringify(email)
   })
-  .then(() => {
-    console.log("do the redirect here? Or just nothing?")
+  .then(res => res.json())
+  .then(response => {
+    console.log(response)
   })
+  // .then(() => {
+  //   console.log("do the redirect here? Or just nothing?")
+  // })
   .catch(console.log)
 }
 
