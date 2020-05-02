@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardBody, Form, Input, Button } from 'reactstrap';
-import { passwords } from '../helpers/passwords';
+import { forgotPassword } from '../helpers/passwords';
 
 class ForgotPassword extends Component {
 
