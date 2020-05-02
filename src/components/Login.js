@@ -41,7 +41,7 @@ class Login extends Component {
             <Input required id="loginpassword" onChange={this.handleChange} name="password" placeholder="password" type="password" value={this.state.password}/>
             <Button color="secondary">Login</Button>
           </Form>
-          <CardText><Link to="/reset_password">Forgot password?</Link></CardText>
+          <CardText><Link to="/forgot_password">Forgot password?</Link></CardText>
         </CardBody>
       </Card>
     );
