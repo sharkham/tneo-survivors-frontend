@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Label, Input, Button, Card, CardHeader, CardBody, FormText } from 'reactstrap';
-import { Link } from 'react-router-dom';
+
 
 
 class ResetPassword extends Component {
@@ -53,7 +53,6 @@ class ResetPassword extends Component {
             <Input required id="password_confirmation" onChange={this.handleChange} name="password_confirmation" placeholder="password_confirmation" type="password" value={this.state.password_confirmation}/>
             <Button type="secondary">Reset Password</Button>
           </Form>
-          <CardText><Link to="/reset_password">Reset password</Link></CardText>
 
         </CardBody>
       </Card>
