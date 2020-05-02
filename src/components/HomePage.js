@@ -15,7 +15,7 @@ import GuidelinesPage from './GuidelinesPage';
 import PreviousNovelsPage from './PreviousNovelsPage';
 import { connect } from 'react-redux';
 import { Container } from 'reactstrap';
-import ResetPassword from './ResetPassword';
+import ForgotPassword from './ForgotPassword';
 // import { getCurrentUser } from '../actions/currentUser'
 // import { getNovel } from './actions/currentNovel'
 
@@ -35,7 +35,7 @@ class HomePage extends Component {
 
               <Route exact path="/login">{loggedIn ? <Redirect to="/"/> : <Login />}</Route>
               <Route exact path="/signup">{loggedIn ? <Redirect to="/"/> : <Signup />}</Route>
-              <Route exact path="/reset_password">{loggedIn ? <Redirect to="/"/> : <ResetPassword />}</Route>
+              <Route exact path="/forgot_password">{loggedIn ? <Redirect to="/"/> : <ForgotPassword />}</Route>
               <Route exact path="/about">{loggedIn ? <AboutPage /> : <Redirect to="/"/>}</Route>
               <Route path="/guidelines">{loggedIn ? <GuidelinesPage /> : <Redirect to="/"/>}</Route>
               <Route path="/novel">{loggedIn ? <NovelPage/> : <Redirect to="/"/>}</Route>
