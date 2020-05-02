@@ -23,6 +23,7 @@ class ResetPassword extends Component {
     //the part where wordcount gets submitted somewhere!
     console.log(this.state)
     //fire the reset password function here
+    //check that password and password confirmation match each other!
     // this.props.signup(this.state)
     this.setState({
       token: "",
@@ -45,10 +46,10 @@ class ResetPassword extends Component {
             <Label for="email">Email:</Label>
             <Input required id="email" onChange={this.handleChange} name="email" placeholder="email" type="email" value={this.state.email}/>
             <Label for="password">New password:</Label>
-            <Input required id="password" onChange={this.handleChange} name="password" placeholder="password" type="text" value={this.state.password}/>
-            <FormText>The name you write under--this will be displayed to other users along with your novel.</FormText>
+            <Input required id="password" onChange={this.handleChange} name="password" placeholder="password" type="password" value={this.state.password}/>
+            <FormText>Set your new password here.</FormText>
             <Label for="password_confirmation">Confirm new password:</Label>
-            <Input required id="password_confirmation" onChange={this.handleChange} name="password_confirmation" placeholder="password_confirmation" type="password_confirmation" value={this.state.password_confirmation}/>
+            <Input required id="password_confirmation" onChange={this.handleChange} name="password_confirmation" placeholder="password_confirmation" type="password" value={this.state.password_confirmation}/>
             <Button type="secondary">Reset Password</Button>
           </Form>
         </CardBody>
