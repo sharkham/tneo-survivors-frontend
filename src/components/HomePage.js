@@ -16,6 +16,8 @@ import PreviousNovelsPage from './PreviousNovelsPage';
 import { connect } from 'react-redux';
 import { Container } from 'reactstrap';
 import ForgotPassword from './ForgotPassword';
+import ResetPassword from './ResetPassword';
+
 // import { getCurrentUser } from '../actions/currentUser'
 // import { getNovel } from './actions/currentNovel'
 
