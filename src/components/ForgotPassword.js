@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardHeader, CardBody, Form, Input, Button } from 'reactstrap';
+import { Card, CardHeader, CardBody, Form, Input, Button, CardText } from 'reactstrap';
 import { forgotPassword } from '../helpers/passwords';
 import { Link } from 'react-router-dom';
 
