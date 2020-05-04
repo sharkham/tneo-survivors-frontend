@@ -1,3 +1,5 @@
+import { login } from '../actions/currentUser'
+
 const baseURL = "http://localhost:3000/api/v1"
 
 export const forgotPassword = (email) => {
@@ -31,11 +33,11 @@ export const resetPassword = (passwordObj) => {
     body: JSON.stringify(passwordObj)
   })
   .then(res => res.json())
-  .then(response => {
-    if (!!response.error) {
-      alert(response.error)
-    } else if (!!response.alert) {
-      alert(response.alert)
+  .then(user => {
+    if (!!user.error) {
+      alert(user.error)
+    } else {
+      // login()
     }
     // alert(response.error)
   })
