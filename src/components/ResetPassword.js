@@ -21,17 +21,25 @@ class ResetPassword extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    //the part where wordcount gets submitted somewhere!
-    console.log(this.state)
-    //fire the reset password function here
-    //check that password and password confirmation match each other!
-    // this.props.signup(this.state)
-    this.setState({
-      token: "",
-      email: "",
-      password: "",
-      password_confirmation: ""
-    })
+    const { password, password_confirmation } = this.state;
+    if (password !== password_confirmation) {
+      alert("Passwords don't match");
+      this.setState({
+        password: "",
+        password_confirmation: ""
+      })
+    } else {
+      console.log(this.state)
+      //fire the reset password function here
+      //check that password and password confirmation match each other!
+      // this.props.signup(this.state)
+      this.setState({
+        token: "",
+        email: "",
+        password: "",
+        password_confirmation: ""
+      })
+    }
   }
 
   render() {
