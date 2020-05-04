@@ -32,7 +32,7 @@ export const resetPassword = (passwordObj) => {
   })
   .then(res => res.json())
   .then(response => {
-    alert(response.alert)
+    alert(response.error)
   })
   // .then(() => {
   //   console.log("do the redirect here? Or just nothing?")
