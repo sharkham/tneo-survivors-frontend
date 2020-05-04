@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, Label, Input, Button, Card, CardHeader, CardBody, FormText } from 'reactstrap';
+import { resetPassword } from '../helpers/passwords';
 
 
 
@@ -30,6 +31,7 @@ class ResetPassword extends Component {
       })
     } else {
       console.log(this.state)
+      resetPassword(this.state)
       //fire the reset password function here
       //check that password and password confirmation match each other!
       // this.props.signup(this.state)
