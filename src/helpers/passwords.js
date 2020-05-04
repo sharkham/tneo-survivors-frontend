@@ -37,7 +37,9 @@ export const resetPassword = (passwordObj) => {
     if (!!user.error) {
       alert(user.error)
     } else {
-      // login()
+      // console.log(user)
+      //possibly this needs to be done as a dispatch!
+      login({email: user.email, password: user.password})
     }
     // alert(response.error)
   })
