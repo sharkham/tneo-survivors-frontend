@@ -39,6 +39,7 @@ export const resetPassword = (credentials) => {
         alert(user.error)
       } else {
         //possibly this needs to be done as a dispatch!
+        alert(user.alert)
         dispatch(getCurrentUser())
       }
     })
