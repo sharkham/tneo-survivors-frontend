@@ -70,6 +70,11 @@ class ResetPassword extends Component {
   }
 }
 
+const mapDispatchToProps = dispatch => {
+  return {
+    resetPassword: (credentials) => dispatch(resetPassword(credentials))
+  }
+}
 
-export default ResetPassword;
+export default connect(null, mapDispatchToProps)(ResetPassword);
 
