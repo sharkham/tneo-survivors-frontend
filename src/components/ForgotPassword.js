@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardHeader, CardBody, Form, Input, Button, CardText } from 'reactstrap';
 import { forgotPassword } from '../helpers/passwords';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class ForgotPassword extends Component {
 
@@ -24,6 +24,7 @@ class ForgotPassword extends Component {
     this.setState({
       email: ""
     })
+    this.props.history.push('/')
     //put a redirect in here.
   }
 
@@ -44,4 +45,4 @@ class ForgotPassword extends Component {
   }
 }
 
-export default ForgotPassword;
+export default withRouter(ForgotPassword);
