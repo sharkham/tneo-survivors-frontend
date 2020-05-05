@@ -53,7 +53,7 @@ class ResetPassword extends Component {
           <Form onSubmit={this.handleSubmit}>
             <Label for="token">Token:</Label>
             <Input required id="token" onChange={this.handleChange} name="token" placeholder="token" type="token" value={this.state.token}/>
-            <FormText>The code that was emailed to you.</FormText>
+            <FormText>The code that was emailed to you. This is case-sensitive.</FormText>
             <Label for="email">Email:</Label>
             <Input required id="email" onChange={this.handleChange} name="email" placeholder="email" type="email" value={this.state.email}/>
             <Label for="password">New password:</Label>
