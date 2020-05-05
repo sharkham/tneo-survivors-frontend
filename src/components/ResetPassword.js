@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Label, Input, Button, Card, CardHeader, CardBody, FormText } from 'reactstrap';
 import { resetPassword } from '../helpers/passwords';
-
+import { connect } from 'react-redux';
 
 
 class ResetPassword extends Component {
