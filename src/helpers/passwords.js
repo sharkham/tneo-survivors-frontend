@@ -22,7 +22,7 @@ export const forgotPassword = (email) => {
   .catch(console.log)
 }
 
-export const resetPassword = (passwordObj) => {
+export const resetPassword = (credentials) => {
   console.log("resetPassword firing!")
   return dispatch => {
     return fetch(`${baseURL}/reset_password`, {
@@ -31,7 +31,7 @@ export const resetPassword = (passwordObj) => {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(passwordObj)
+      body: JSON.stringify(credentials)
     })
     .then(res => res.json())
     .then(user => {
