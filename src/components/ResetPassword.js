@@ -31,7 +31,7 @@ class ResetPassword extends Component {
       })
     } else {
       console.log(this.state)
-      resetPassword(this.state)
+      this.props.resetPassword(this.state)
       //fire the reset password function here
       //check that password and password confirmation match each other!
       // this.props.signup(this.state)
