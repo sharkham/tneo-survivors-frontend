@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:3000/api/v1"
+const baseURL = process.env.REACT_APP_BASE_API_URL
 
 //synchronous action creators
 

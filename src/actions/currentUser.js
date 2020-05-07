@@ -1,8 +1,8 @@
 // import { getNovel } from './currentNovel'
 import { getNovels } from './novels'
 
-const baseURL = "http://localhost:3000/api/v1"
-
+// const baseURL = "http://localhost:3000/api/v1"
+const baseURL = process.env.REACT_APP_BASE_API_URL
 //synchronous action creators
 
 //for this action we have a user object in hand

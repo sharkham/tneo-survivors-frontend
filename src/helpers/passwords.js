@@ -1,6 +1,6 @@
 import { getCurrentUser } from '../actions/currentUser'
 
-const baseURL = "http://localhost:3000/api/v1"
+const baseURL = process.env.REACT_APP_BASE_API_URL
 
 export const forgotPassword = (email) => {
   console.log("forgotPassword firing!")
