@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Card, CardHeader, CardBody, Form, Input, Button, CardText } from 'reactstrap';
+import { Card, CardHeader, CardBody, Form, Input, Button } from 'reactstrap';
 import { forgotPassword } from '../helpers/passwords';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class ForgotPassword extends Component {
 
@@ -37,8 +37,6 @@ class ForgotPassword extends Component {
             <Input required id="forgotpasswordemail" onChange={this.handleChange} name="email" placeholder="email" type="email" value={this.state.email}/>
             <Button color="secondary">Submit</Button>
           </Form>
-          <CardText><Link to="/reset_password">Reset password (once you have received email code)</Link></CardText>
-
         </CardBody>
       </Card>
     );
