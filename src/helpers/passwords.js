@@ -3,7 +3,6 @@ import { getCurrentUser } from '../actions/currentUser'
 const baseURL = process.env.REACT_APP_BASE_API_URL
 
 export const forgotPassword = (email) => {
-  console.log("forgotPassword firing!")
   return fetch(`${baseURL}/forgot_password`, {
     credentials: "include",
     method: "POST",
@@ -23,7 +22,6 @@ export const forgotPassword = (email) => {
 }
 
 export const resetPassword = (credentials) => {
-  console.log("resetPassword firing!")
   return dispatch => {
     return fetch(`${baseURL}/reset_password`, {
       credentials: "include",

@@ -96,7 +96,6 @@ export const patchNovel = (novel) => {
 }
 
 export const patchWordCount = novel => {
-  console.log("patching word count")
   return dispatch => {
     return fetch(`${baseURL}/novels/${novel.id}`, {
       credentials: "include",

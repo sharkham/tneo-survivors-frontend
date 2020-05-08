@@ -30,7 +30,6 @@ class ResetPassword extends Component {
         password_confirmation: ""
       })
     } else {
-      console.log(this.state)
       this.props.resetPassword(this.state)
       //fire the reset password function here
       //check that password and password confirmation match each other!

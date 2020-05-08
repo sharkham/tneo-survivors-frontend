@@ -22,7 +22,6 @@ class Signup extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     //the part where wordcount gets submitted somewhere!
-    console.log(this.state)
     this.props.signup(this.state)
     this.setState({
       email: "",

@@ -20,7 +20,6 @@ class ForgotPassword extends Component {
     event.preventDefault()
     //the part where wordcount gets submitted somewhere!
     forgotPassword(this.state.email)
-    console.log(this.state)
     this.setState({
       email: ""
     })

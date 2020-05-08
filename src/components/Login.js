@@ -21,7 +21,6 @@ class Login extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     //the part where wordcount gets submitted somewhere!
-    console.log(this.state)
     this.props.login(this.state)
     this.setState({
       email: "",

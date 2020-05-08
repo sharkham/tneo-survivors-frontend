@@ -23,7 +23,6 @@ export const clearCurrentUser = () => {
 
 //asynchronous action creators
 export const login = credentials => {
-  console.log(credentials)
   return dispatch => {
     return fetch(`${baseURL}/login`, {
       //still creating something--creating a session, that's why it's a POST
@@ -53,7 +52,6 @@ export const signup = credentials => {
     const userInfo = {
       user: credentials
     }
-    console.log(userInfo)
     return fetch(`${baseURL}/signup`, {
       //still creating something--creating a session, that's why it's a POST
       credentials: "include",
