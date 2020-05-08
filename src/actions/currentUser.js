@@ -90,7 +90,6 @@ export const logout = () => {
 }
 
 export const getCurrentUser = () => {
-  console.log("getCurrentUser firing")
   return dispatch => {
     return fetch(`${baseURL}/get_current_user`, {
       credentials: "include",
