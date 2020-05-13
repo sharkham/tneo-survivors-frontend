@@ -44,8 +44,6 @@ class NavBar extends Component {
 
             {/* For logged in users:          */}
             { this.props.currentUser ? <NavItem><NavLink tag={Link} to="/">{new Date().getFullYear()} Contest Novels</NavLink></NavItem> : "" }
-            {/* { this.props.currentUser ? <NavItem><NavLink tag={Link} to="/novel">Your Novel</NavLink></NavItem> : "" }
-            { this.props.currentUser ? <NavItem><NavLink tag={Link} to="/previous_novels">Previous Novels</NavLink></NavItem> : "" } */}
             { this.props.currentUser ?
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle nav caret>
