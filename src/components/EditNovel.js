@@ -83,7 +83,7 @@ class EditNovel extends Component {
               <Label for="summary">Summary:</Label>
                 <Input type="textarea" name="summary" id="summary" onChange={this.handleChange} value={this.state.summary}/>
             </FormGroup>
-            <FormGroup>
+            {/* <FormGroup>
               <Label for="plan">Plan of Attack:</Label>
                 <Input type="select" id="plan" name="plan" onChange={this.handleChange} value={this.state.plan}>
                   <option value="">--Please choose a plan--</option>
@@ -92,7 +92,7 @@ class EditNovel extends Component {
                     return <option key={planType} value={planType}>{planType}</option>
                   })}
                 </Input>
-            </FormGroup>
+            </FormGroup> */}
             <FormGroup>
               <Label for="goal">Word Count Goal:</Label>
                 <Input type="number" min="1" name="goal" id="goal" onChange={this.handleChange} value={this.state.goal}/>
