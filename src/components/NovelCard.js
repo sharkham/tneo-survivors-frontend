@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import SmallBadgesContainer from './SmallBadgesContainer';
 import { Card, CardHeader, CardText, CardTitle, CardBody, Progress, Popover, PopoverBody, Button } from 'reactstrap';
 import { progressbar } from '../helpers/progressbar'
-import uuid from "uuid";
 
 class NovelCard extends Component {
 
@@ -14,16 +13,6 @@ class NovelCard extends Component {
     this.setState(prevState => ({
       isOpen: !prevState.isOpen
     }));
-  }
-
-  buttonId = () => {
-    let id = 0
-    if (id === 0) {
-      id = uuid()
-      return id
-    } else {
-      return id
-    }
   }
 
   render() {
