@@ -28,7 +28,7 @@ class NovelCard extends Component {
           {this.props.container !== "PreviousNovelsPage" ? <CardTitle>by {this.props.novel.user.name}</CardTitle> : ""}
           {/* <CardText>{novel.summary}</CardText> */}
           {this.props.container === "PreviousNovelsPage" ? <CardText>Summary: {this.props.novel.summary}</CardText> : ""}
-          <CardText>Plan of Attack: {this.props.novel.plan}</CardText>
+          {/* <CardText>Plan of Attack: {this.props.novel.plan}</CardText> */}
           {this.props.container === "PreviousNovelsPage" ? <CardText>Goal: {this.props.novel.goal}</CardText> : ""}
           {this.props.container === "PreviousNovelsPage" ? <CardText>Final Word Count: {this.props.novel.wordcount}</CardText> : ""}
           <SmallBadgesContainer badges={this.props.novel.badges} />
