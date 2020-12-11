@@ -32,12 +32,12 @@ export const setCurrentNovel = novel => {
   }
 }
 
-export const setOtherUserNovels = novels => {
-  return {
-    type: "SET_OTHER_USER_NOVELS",
-    novels
-  }
-}
+// export const setOtherUserNovels = novels => {
+//   return {
+//     type: "SET_OTHER_USER_NOVELS",
+//     novels
+//   }
+// }
 
 export const setOtherNovels = novels => {
   return {
@@ -134,9 +134,9 @@ export const getNovels = user => {
       if (!!findCurrentNovel(novels, user)) {
         dispatch(setCurrentNovel(findCurrentNovel(novels, user)))
       }
-      if (!!findOtherUserNovels(novels, user)) {
-        dispatch(setOtherUserNovels(findOtherUserNovels(novels, user)))
-      }
+      // if (!!findOtherUserNovels(novels, user)) {
+      //   dispatch(setOtherUserNovels(findOtherUserNovels(novels, user)))
+      // }
       if (!!findAllCurrentNovels(novels, user)) {
         dispatch(setOtherNovels(findAllCurrentNovels(novels, user)))
       }
@@ -147,22 +147,28 @@ export const getNovels = user => {
 
 //helpers
 const findCurrentNovel = (novels, user) => {
-  const currentYear = new Date().getFullYear()
-  if (!!novels.find(novel => novel.year === currentYear && novel.user_id === user.id)) {
-    return novels.find(novel => novel.year === currentYear && novel.user_id === user.id)
+  // const currentYear = new Date().getFullYear()
+  // if (!!novels.find(novel => novel.year === currentYear && novel.user_id === user.id)) {
+  //   return novels.find(novel => novel.year === currentYear && novel.user_id === user.id)
+  // }
+  if (!!novels.find(novel => novel.user_id === user.id)) {
+    return novels.find(novel => novel.user_id === user.id)
   }
 }
 
-const findOtherUserNovels = (novels, user) => {
-  const currentYear = new Date().getFullYear()
-  if (!!novels.find(novel => novel.year !== currentYear && novel.user_id === user.id)) {
-    return novels.filter(novel => novel.year !== currentYear && novel.user_id === user.id)
-  }
-}
+// const findOtherUserNovels = (novels, user) => {
+//   const currentYear = new Date().getFullYear()
+//   if (!!novels.find(novel => novel.year !== currentYear && novel.user_id === user.id)) {
+//     return novels.filter(novel => novel.year !== currentYear && novel.user_id === user.id)
+//   }
+// }
 
 const findAllCurrentNovels = (novels, user) => {
-  const currentYear = new Date().getFullYear()
-  if (!!novels.find(novel => novel.year === currentYear)) {
-    return novels.filter(novel => novel.year === currentYear)
+  // const currentYear = new Date().getFullYear()
+  // if (!!novels.find(novel => novel.year === currentYear)) {
+  //   return novels.filter(novel => novel.year === currentYear)
+  // }
+  if (!!novels) {
+    return novels
   }
 }
