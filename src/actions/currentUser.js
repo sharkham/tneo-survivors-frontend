@@ -48,6 +48,7 @@ export const login = credentials => {
 }
 
 export const signup = credentials => {
+  console.log(baseURL)
   return dispatch => {
     const userInfo = {
       user: credentials
