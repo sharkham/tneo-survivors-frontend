@@ -45,19 +45,20 @@ class NavBar extends Component {
             {/* For logged in users:          */}
             { this.props.currentUser ? <NavItem><NavLink tag={Link} to="/">Current Novels</NavLink></NavItem> : "" }
             { this.props.currentUser ?
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Your Novels
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  <NavLink tag={Link} to="/novel">Current Novel</NavLink>
-                </DropdownItem>
-                <DropdownItem>
-                  <NavLink tag={Link} to="/previous_novels">Previous Novels</NavLink>
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
+              <NavItem><NavLink tag={Link} to="/novel">Your Novel</NavLink></NavItem>
+            // <UncontrolledDropdown nav inNavbar>
+            //   <DropdownToggle nav caret>
+            //     Your Novels
+            //   </DropdownToggle>
+            //   <DropdownMenu right>
+            //     <DropdownItem>
+            //       <NavLink tag={Link} to="/novel">Current Novel</NavLink>
+            //     </DropdownItem>
+            //     <DropdownItem>
+            //       <NavLink tag={Link} to="/previous_novels">Previous Novels</NavLink>
+            //     </DropdownItem>
+            //   </DropdownMenu>
+            // </UncontrolledDropdown>
             :
             ""
             }
