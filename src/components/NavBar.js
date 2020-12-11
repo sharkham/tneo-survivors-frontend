@@ -63,19 +63,20 @@ class NavBar extends Component {
             ""
             }
             { this.props.currentUser ?
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                More Info
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  <NavLink tag={Link} to="/about">About</NavLink>
-                </DropdownItem>
-                <DropdownItem>
-                  <NavLink tag={Link} to="/guidelines">Contest Guidelines</NavLink>
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
+              <NavItem><NavLink tag={Link} to="/about">About</NavLink></NavItem>
+            // <UncontrolledDropdown nav inNavbar>
+            //   <DropdownToggle nav caret>
+            //     More Info
+            //   </DropdownToggle>
+            //   <DropdownMenu right>
+            //     <DropdownItem>
+            //       <NavLink tag={Link} to="/about">About</NavLink>
+            //     </DropdownItem>
+            //     <DropdownItem>
+            //       <NavLink tag={Link} to="/guidelines">Contest Guidelines</NavLink>
+            //     </DropdownItem>
+            //   </DropdownMenu>
+            // </UncontrolledDropdown>
             :
             ""
             }
