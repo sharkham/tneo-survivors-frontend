@@ -34,7 +34,7 @@ class NavBar extends Component {
   render() {
     return (
       <Navbar color="light" light expand="md">
-        <NavbarBrand tag={Link} to="/">Novel Tracker App</NavbarBrand>
+        <NavbarBrand tag={Link} to="/">TNEO Survivors Novel Tracker App</NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="mr-auto" navbar>
